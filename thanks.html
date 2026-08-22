@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>You’re in — The Strong Kitchen</title>
+<title>SK Insider activated — The Strong Kitchen</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="images/logo-text.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +23,8 @@
 <!-- Connecticut -->
 <section class="hero" id="ct"><div class="wrap">
   <div>
-    <span class="eyebrow" id="eb">You’re in</span>
-    <h1 id="h1ct">Here’s what’s coming<span id="hi"></span>.</h1>
+    <span class="eyebrow" id="eb">SK Insider activated</span>
+    <h1 id="h1ct">Your bonuses are waiting<span id="hi"></span>.</h1>
     <p class="sub">Check your inbox — the first email is on its way from luke@thestrongkitchen.com. While you’re here:</p>
     <h2 style="font-size:1.15rem;margin-top:10px">How the week works</h2>
     <ol class="steps">
@@ -74,7 +74,6 @@
     document.getElementById('nonct').classList.remove('hide');
   } else {
     if (q.get('n')) document.getElementById('hi').textContent = ', ' + q.get('n').replace(/[<>]/g,'');
-    if (q.get('v') === 'b') { document.getElementById('eb').textContent = 'SK Insider activated'; document.getElementById('h1ct').firstChild.textContent = 'Your bonuses are waiting'; }
   }
 })();
 </script>

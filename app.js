@@ -41,7 +41,7 @@
     if (zip.length !== 5) return show('err', 'Enter your 5-digit zip so we only send you what we actually deliver.');
     var isCT = zip.indexOf('06') === 0;
 
-    var props = { zip_code: zip, is_connecticut: isCT, lead_source: 'first-month-bonuses-lp', signup_page: location.pathname };
+    var props = { zip_code: zip, is_connecticut: isCT, lead_source: 'first-month-bonuses-lp', signup_page: location.pathname, sk_insider_claim: true };
     Object.keys(carry).forEach(function (k) { props[k] = carry[k]; });
 
     var body = { data: { type: 'subscription', attributes: {
@@ -73,7 +73,6 @@
       var next = new URL('thanks.html', location.href);
       next.searchParams.set('ct', isCT ? '1' : '0');
       if (first) next.searchParams.set('n', first);
-      if (/\/b\.html$/.test(location.pathname)) next.searchParams.set('v', 'b');
       Object.keys(carry).forEach(function (k) { next.searchParams.set(k, carry[k]); });
       location.href = next.toString();
     }).catch(function () {
