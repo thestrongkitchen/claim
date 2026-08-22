@@ -5,7 +5,6 @@
 (function () {
   var KLAVIYO_COMPANY = 'RHx7TH';          // public key
   var KLAVIYO_LIST = 'Tg6vZf';             // "First-Month Bonuses — Signups" (triggers the nurture flow)
-  var NEWSLETTER_LIST = 'Upt57m';          // "Newsletter" — Luke's Monday menu + Wednesday reminder audience (CT signups only)
   var MENU_URL = 'https://thestrongkitchen.com/menus';
 
   // ---- attribution carry-over -------------------------------------------
@@ -61,14 +60,7 @@
       body: JSON.stringify(body)
     }).then(function (r) {
       if (!r.ok && r.status !== 202) throw new Error('status ' + r.status);
-      // Connecticut signups also join the main Newsletter list (Monday menu + Wednesday reminder). Out-of-state stays off it.
-      if (isCT) {
-        var nl = JSON.parse(JSON.stringify(body));
-        nl.data.relationships.list.data.id = NEWSLETTER_LIST;
-        fetch('https://a.klaviyo.com/client/subscriptions/?company_id=' + KLAVIYO_COMPANY, {
-          method: 'POST', headers: { 'Content-Type': 'application/vnd.api+json', 'revision': '2024-10-15' }, body: JSON.stringify(nl)
-        }).catch(function () {});
-      }
+      // Newsletter hand-off happens in Klaviyo (end of nurture flow, or on first purchase) — not here. Luke 8/22.
       try { if (window.dataLayer) window.dataLayer.push({ event: 'generate_lead', lead_is_ct: isCT, lead_zip: zip }); } catch (e) {}
       var next = new URL('thanks.html', location.href);
       next.searchParams.set('ct', isCT ? '1' : '0');
