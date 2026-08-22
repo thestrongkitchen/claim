@@ -73,6 +73,7 @@
       var next = new URL('thanks.html', location.href);
       next.searchParams.set('ct', isCT ? '1' : '0');
       if (first) next.searchParams.set('n', first);
+      if (/\/b\.html$/.test(location.pathname)) next.searchParams.set('v', 'b');
       Object.keys(carry).forEach(function (k) { next.searchParams.set(k, carry[k]); });
       location.href = next.toString();
     }).catch(function () {
