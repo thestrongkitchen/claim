@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You’re in — The Strong Kitchen</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="images/logo-text.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<!-- Google Tag Manager (same container as thestrongkitchen.com) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KTPCPN88');</script>
+</head>
+<body class="thanks">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTPCPN88" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header class="top"><div class="wrap">
+  <a href="https://thestrongkitchen.com" data-carry><img src="images/logo-text.png" alt="The Strong Kitchen"></a>
+  <span class="tag">Cooked in Hamden, CT · Delivered Sunday &amp; Monday</span>
+</div></header>
+
+<!-- Connecticut -->
+<section class="hero" id="ct"><div class="wrap">
+  <div>
+    <span class="eyebrow">You’re in</span>
+    <h1>Here’s what’s coming<span id="hi"></span>.</h1>
+    <p class="sub">Check your inbox — the first email is on its way from luke@thestrongkitchen.com (drag it to Primary if it lands somewhere odd). While you’re here:</p>
+    <h2 style="font-size:1.15rem;margin-top:10px">How the week works</h2>
+    <ol class="steps">
+      <li><strong>Order any day.</strong> The menu’s always open.</li>
+      <li><strong>Wednesday midnight is the line.</strong> Whatever’s in your cart by then is on that weekend’s delivery.</li>
+      <li><strong>Sunday or Monday, it’s at your door</strong> — or pick up at our kitchen in Hamden.</li>
+    </ol>
+    <a class="btn inline" href="https://thestrongkitchen.com/menus" data-menu>See this week’s menu →</a>
+    <p class="fine" style="text-align:left">Order à la carte, or start a free trial of a flexible membership — easy to pause, easy to cancel. The bonuses are yours either way.</p>
+  </div>
+  <div class="art"><img src="images/sauce-bottles.jpg" alt="Strong Sauce bottles" width="1200" height="900"></div>
+</div></section>
+
+<section class="boxes" id="ct-boxes"><div class="wrap">
+  <h2>Nothing to add. It’s in the box.</h2>
+  <div class="tiles">
+    <div class="tile"><img src="images/sauce-single.jpg" alt="A bottle of Firecracker Strong Sauce"><div class="t"><span class="n">Order 1</span><b>Free Strong Sauce</b>A full bottle of Firecracker in your first box, with a note from Luke.</div></div>
+    <div class="tile"><img src="images/treat-bars.jpg" alt="SK Snack"><div class="t"><span class="n">Order 2</span><b>Free snack</b>An SK Snack, tucked into box two.</div></div>
+    <div class="tile"><img src="images/meal-pulled-chicken.jpg" alt="A Strong Kitchen meal"><div class="t"><span class="n">Order 3</span><b>Free meal</b>A free meal on us in box three.</div></div>
+    <div class="tile surprise"><div class="art">?</div><div class="t"><span class="n">Order 4</span><b>A surprise</b>We won’t spoil it. And it doesn’t stop at four.</div></div>
+  </div>
+  <p class="note">Just order. Your first order starts the clock; each bonus ships with the next box. No code. You won’t see them in your cart, on purpose.</p>
+</div></section>
+
+<!-- Not Connecticut -->
+<section class="hero hide" id="nonct"><div class="wrap">
+  <div>
+    <span class="eyebrow">Thanks for checking</span>
+    <h1>We only deliver in Connecticut — for now.</h1>
+    <p class="sub">We cook in Hamden and deliver across New Haven, Hartford and Fairfield counties, and that’s it today. We don’t ship boxes across state lines — the whole point is that your food is cooked a few miles from your house by people you can email.</p>
+    <p class="sub">If that changes, you’ll hear from Luke once. Otherwise that’s the only email you’ll get. Know someone in Connecticut who’d like dinner handled? Send them to <a href="https://thestrongkitchen.com" data-carry>thestrongkitchen.com</a> — their first box comes with a bottle of Strong Sauce on us.</p>
+  </div>
+  <div class="art"><img src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals" width="1200" height="900"></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><strong>The Strong Kitchen</strong> · 109 Sanford St Building 2, Hamden, CT 06514 · <a href="mailto:luke@thestrongkitchen.com">luke@thestrongkitchen.com</a></p>
+  <p>New customers only; one bonus per order, first four orders. Didn’t love a meal? We’ll replace it free. <a href="https://thestrongkitchen.com" data-carry>thestrongkitchen.com</a> · © 2026</p>
+</div></footer>
+
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  if (q.get('ct') === '0') {
+    document.getElementById('ct').classList.add('hide');
+    document.getElementById('ct-boxes').classList.add('hide');
+    document.getElementById('nonct').classList.remove('hide');
+  } else if (q.get('n')) {
+    document.getElementById('hi').textContent = ', ' + q.get('n').replace(/[<>]/g,'');
+  }
+})();
+</script>
+<script src="app.js"></script>
+</body>
+</html>

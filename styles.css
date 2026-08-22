@@ -1,0 +1,91 @@
+/* The Strong Kitchen — first-month bonuses pages. Palette + fonts match thestrongkitchen.com (Aug 2026). */
+:root{
+  --green:#73933c; --green-d:#5c7530; --green-l:#f1f4eb;
+  --forest:#2e3a18; --gold:#d9b46f; --gold-d:#ad9058; --cream:#f7f0e2;
+  --bg:#fcfbf5; --white:#fff; --ink:#0b0906; --ink2:#545250; --line:#dadad9;
+  --err:#d32f2f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--green-d)}
+h1,h2,h3{font-family:"Plus Jakarta Sans",Inter,sans-serif;color:var(--forest);line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.45rem;font-weight:700;margin-bottom:14px}
+p{margin:0 0 14px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.narrow{max-width:760px;margin:0 auto}
+
+/* header */
+.top{padding:18px 0;border-bottom:1px solid var(--line);background:var(--white)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top img{height:40px;width:auto}
+.top .tag{font-size:.85rem;color:var(--ink2)}
+@media (max-width:560px){.top .tag{display:none}}
+
+/* hero */
+.hero{padding:48px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero .art{order:-1;max-height:320px;overflow:hidden;border-radius:12px}}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--green-d);background:var(--green-l);border-radius:999px;padding:5px 12px;margin-bottom:16px}
+.sub{font-size:1.12rem;color:var(--ink2);max-width:36em;margin:14px 0 22px}
+.art img{border-radius:12px;box-shadow:0 8px 30px rgba(46,58,24,.12)}
+
+/* form */
+.form{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px;max-width:460px;box-shadow:0 4px 18px rgba(46,58,24,.06)}
+.form label{display:block;font-size:.85rem;font-weight:600;color:var(--forest);margin:10px 0 4px}
+.form label span{font-weight:400;color:var(--ink2)}
+.form input{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.form input:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.btn{display:inline-block;background:var(--green);color:#fff !important;text-decoration:none;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;font-size:1.05rem;border:0;border-radius:8px;padding:15px 26px;cursor:pointer;width:100%;text-align:center;margin-top:14px;transition:background .15s}
+.btn:hover,.btn:focus-visible{background:var(--green-d);outline:none}
+.btn.inline{width:auto}
+.btn[disabled]{opacity:.6;cursor:wait}
+.fine{font-size:.82rem;color:var(--ink2);margin:10px 0 0;text-align:center}
+.msg{font-size:.92rem;margin-top:10px;display:none}
+.msg.err{display:block;color:var(--err)}
+.msg.ok{display:block;color:var(--green-d)}
+
+/* boxes */
+.boxes{padding:36px 0}
+.boxes h2{text-align:center}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+@media (max-width:820px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tile img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.tile .t{padding:12px 14px 14px;font-size:.92rem}
+.tile .t b{display:block;font-family:"Plus Jakarta Sans",Inter,sans-serif;color:var(--forest);font-size:.95rem;margin-bottom:3px}
+.tile .n{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-d);font-weight:700}
+.tile.surprise{background:var(--forest);color:#f1f4eb;border-color:var(--forest)}
+.tile.surprise .t b{color:var(--gold)}
+.tile.surprise .art{aspect-ratio:4/3;display:grid;place-items:center;font-family:"Plus Jakarta Sans",sans-serif;font-size:3rem;color:var(--gold);background:#222c12}
+.note{text-align:center;color:var(--ink2);font-size:.95rem;margin:18px auto 0;max-width:44em}
+
+/* objections */
+.obj{padding:30px 0}
+.obj ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.obj li{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.obj li em{font-style:normal;font-weight:700;color:var(--forest);display:block;margin-bottom:3px}
+
+/* proof */
+.proof{padding:26px 0 10px;text-align:center}
+.proof .strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;font-weight:600;color:var(--forest);font-size:.95rem;margin-bottom:18px}
+.proof blockquote{margin:0 auto;max-width:40em;font-size:1.05rem;color:var(--ink)}
+.proof blockquote cite{display:block;font-style:normal;font-size:.88rem;color:var(--ink2);margin-top:6px}
+.stars{color:var(--gold-d);letter-spacing:.05em}
+
+/* cta band */
+.band{padding:38px 0 48px;text-align:center}
+.band .btn{width:auto}
+.quiet{display:block;margin-top:16px;font-size:.9rem}
+
+/* thanks */
+.thanks .steps{counter-reset:s;list-style:none;padding:0;margin:14px 0 20px;display:grid;gap:10px}
+.thanks .steps li{counter-increment:s;position:relative;padding-left:40px}
+.thanks .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--forest);font:700 .9rem/28px "Plus Jakarta Sans",sans-serif;text-align:center}
+.hide{display:none !important}
+
+footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:.8rem;color:var(--ink2)}
+footer p{margin:0 0 6px;max-width:none}
