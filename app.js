@@ -13,7 +13,11 @@
   ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'].forEach(function (k) {
     if (params.get(k)) carry[k] = params.get(k);
   });
-  if (!carry.utm_source) { carry.utm_source = 'claim-lp'; carry.utm_medium = 'referral'; carry.utm_campaign = 'first-month-bonuses'; }
+  if (!carry.utm_source) {
+    if (carry.gclid) { carry.utm_source = 'google'; carry.utm_medium = 'cpc'; carry.utm_campaign = 'search-sk-insider-claim'; }
+    else if (carry.fbclid) { carry.utm_source = 'facebook'; carry.utm_medium = 'paid-social'; carry.utm_campaign = 'first-month-bonuses'; }
+    else { carry.utm_source = 'claim-lp'; carry.utm_medium = 'referral'; carry.utm_campaign = 'first-month-bonuses'; }
+  }
   function withCarry(url) {
     var u = new URL(url, location.href);
     Object.keys(carry).forEach(function (k) { if (!u.searchParams.get(k)) u.searchParams.set(k, carry[k]); });
