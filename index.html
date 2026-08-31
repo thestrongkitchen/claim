@@ -45,7 +45,18 @@
   /* Capture sits top-left — the eye lands left of centre — with the photo and the
      bonus detail on the right. On a phone the form column stacks first, ahead of
      the photo, so the ask is on the first screen. (Luke, 8/31) */
-  .hero .art ul.ben{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .bonusbar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+  .bb{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px 5px;text-align:center}
+  .bb .n{display:block;font-size:.65rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;
+         color:var(--green-d);margin-bottom:5px}
+  .bb b{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:.9rem;color:var(--forest);line-height:1.18}
+  .bbnote{font-size:.92rem;color:var(--ink2);margin-top:11px;line-height:1.5}
+  @media(max-width:820px){
+    .bonusbar{gap:6px;margin-top:13px}
+    .bb{padding:11px 3px}
+    .bb b{font-size:.79rem}
+    .bbnote{font-size:.86rem;margin-top:9px}
+  }
   .hero .art img{max-height:300px;object-fit:cover}
   @media (max-width:820px){
     .hero{padding-top:26px}
@@ -102,13 +113,14 @@
   </div>
   <div class="art">
     <img src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals with the green delivery bag" width="1200" height="900">
-    <ul class="ben">
-      <li><strong>Free sauce</strong> — a full bottle of Firecracker Strong Sauce in your first box, with a note from Luke</li>
-      <li><strong>Free snack</strong> — an SK Snack, tucked into box two</li>
-      <li><strong>Free meal</strong> — a free meal on us in box three</li>
-      <li><strong>Early product access</strong> — new meals and sauces before they hit the menu</li>
-      <li><strong>A surprise in box four</strong> — and it doesn’t stop at four</li>
-    </ul>
+    <div class="bonusbar">
+      <div class="bb"><span class="n">Order 1</span><b>Free<br>Sauce</b></div>
+      <div class="bb"><span class="n">Order 2</span><b>Free<br>Snack</b></div>
+      <div class="bb"><span class="n">Order 3</span><b>Free<br>Meal</b></div>
+      <div class="bb"><span class="n">Order 4</span><b>A<br>Surprise</b></div>
+    </div>
+    <p class="bbnote">A full bottle of Firecracker in box one, with a note from Luke. Plus early access
+    to new meals and sauces before they hit the menu — and it doesn’t stop at four.</p>
   </div>
 </div></section>
 

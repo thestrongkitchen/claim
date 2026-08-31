@@ -16,12 +16,32 @@
      the photo shrinks and how-it-works moves below the bonus tiles. */
   .how-after{padding:8px 0 34px}
   @media (max-width:820px){
-    .hero{padding:22px 0 20px}
-    .hero .art{max-height:150px;overflow:hidden;border-radius:12px}
-    .hero .art img{height:150px;object-fit:cover}
-    .hero h1{font-size:1.75rem}
-    .boxes{padding-top:22px}
+    .hero{padding:16px 0 12px}
+    .hero .art{max-height:104px;overflow:hidden;border-radius:12px}
+    .hero .art img{height:104px;object-fit:cover;object-position:center 45%}
+    .hero h1{font-size:1.6rem}
+    .hero .sub{font-size:.98rem;line-height:1.45;margin-bottom:12px}
+    .hero .btn{margin-top:10px}
+    .hero .fine{margin-top:8px;font-size:.82rem}
+    .boxes{padding-top:14px}
+    .boxes h2{font-size:1.2rem;margin-bottom:10px}
     .boxes .tiles{grid-template-columns:1fr 1fr;gap:10px}
+  }
+</style>
+<style>
+  /* Bonus banner: one row of four, no photos — the picture is what pushed this
+     below the fold. */
+  .boxes .tiles{display:grid !important;grid-template-columns:repeat(4,1fr) !important;gap:9px !important}
+  .boxes .tile{background:#fff;border:1px solid var(--line);border-radius:11px;
+               padding:13px 5px;text-align:center;overflow:visible}
+  .boxes .tile .n{display:block;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;
+                  font-weight:700;color:var(--green-d);margin-bottom:5px}
+  .boxes .tile b{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:.92rem;
+                 color:var(--forest);line-height:1.18}
+  @media(max-width:820px){
+    .boxes .tiles{gap:6px !important}
+    .boxes .tile{padding:11px 3px}
+    .boxes .tile b{font-size:.8rem}
   }
 </style>
 </head>
@@ -48,10 +68,10 @@
 <section class="boxes" id="ct-boxes"><div class="wrap">
   <h2>Nothing to add. It’s in the box.</h2>
   <div class="tiles">
-    <div class="tile"><img src="images/sauce-single.jpg" alt="A bottle of Firecracker Strong Sauce"><div class="t"><span class="n">Order 1</span><b>Free Strong Sauce</b>A full bottle of Firecracker in your first box, with a note from Luke.</div></div>
-    <div class="tile"><img src="images/treat-bars.jpg" alt="SK Snack"><div class="t"><span class="n">Order 2</span><b>Free snack</b>An SK Snack, tucked into box two.</div></div>
-    <div class="tile"><img src="images/meal-pulled-chicken.jpg" alt="A Strong Kitchen meal"><div class="t"><span class="n">Order 3</span><b>Free meal</b>A free meal on us in box three.</div></div>
-    <div class="tile surprise"><div class="art">?</div><div class="t"><span class="n">Order 4</span><b>A surprise</b>We won’t spoil it. And it doesn’t stop at four.</div></div>
+    <div class="tile"><span class="n">Order 1</span><b>Free<br>Sauce</b></div>
+    <div class="tile"><span class="n">Order 2</span><b>Free<br>Snack</b></div>
+    <div class="tile"><span class="n">Order 3</span><b>Free<br>Meal</b></div>
+    <div class="tile"><span class="n">Order 4</span><b>A<br>Surprise</b></div>
   </div>
   <p class="note">Just order. Your first order starts the clock; each bonus ships with the next box. No code. You won’t see them in your cart, on purpose.</p>
 </div></section>

@@ -137,6 +137,19 @@
     .stack ol{gap:8px}
     .stack .sub{margin-bottom:10px}
   }
+  /* Bonus banner: one row, four across, full width. Kept last so it wins. */
+  .stack ol{display:grid !important;grid-template-columns:repeat(4,1fr) !important;gap:8px !important}
+  .stack li{flex-direction:column !important;align-items:center !important;text-align:center;
+            gap:6px !important;padding:12px 5px !important}
+  .stack .ord{margin-top:0 !important}
+  .stack b{font-size:.92rem !important;line-height:1.18}
+  .stack span.d{display:none !important}
+  @media(max-width:900px){
+    .stack ol{gap:6px !important}
+    .stack li{padding:10px 3px !important;gap:5px !important}
+    .stack b{font-size:.8rem !important}
+    .stack .ord{width:19px !important;height:19px !important;font-size:.68rem !important}
+  }
 </style>
 </head>
 <body class="lp">
@@ -166,10 +179,10 @@
       <h2>Your first four orders include a free gift</h2>
       <div class="sub">Nothing to sign up for, no code to enter.</div>
       <ol>
-        <li><span class="ord">1</span><div><b>Free Strong Sauce</b><span class="d">A full bottle of Firecracker in your first box, with a note from Luke.</span></div></li>
-        <li><span class="ord">2</span><div><b>Free snack</b><span class="d">An SK Snack, tucked into box two.</span></div></li>
-        <li><span class="ord">3</span><div><b>Free meal</b><span class="d">A free meal on us in box three.</span></div></li>
-        <li><span class="ord">4</span><div><b>A surprise</b><span class="d">We won't spoil it. And it doesn't stop at four.</span></div></li>
+        <li><span class="ord">1</span><div><b>Free<br>Sauce</b><span class="d">A full bottle of Firecracker in your first box, with a note from Luke.</span></div></li>
+        <li><span class="ord">2</span><div><b>Free<br>Snack</b><span class="d">An SK Snack, tucked into box two.</span></div></li>
+        <li><span class="ord">3</span><div><b>Free<br>Meal</b><span class="d">A free meal on us in box three.</span></div></li>
+        <li><span class="ord">4</span><div><b>A<br>Surprise</b><span class="d">We won't spoil it. And it doesn't stop at four.</span></div></li>
       </ol>
     </div>
   </div>
