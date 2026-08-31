@@ -34,8 +34,8 @@
   @media(max-width:900px){
     .top-grid{grid-template-columns:1fr;gap:13px;padding-top:14px}
     /* let the right column's children join the grid so the offer can sit above the photo */
-    .top-grid > div:last-child{display:contents}
-    .top-grid > div:first-child{order:1}
+    .rightcol{display:contents}
+    .textcol{order:1}
     .stack{order:2;margin-top:0}
     .shot{order:3;max-height:190px;overflow:hidden;border-radius:14px}
     .shot img{height:190px;object-fit:cover;object-position:center 55%}
@@ -185,7 +185,7 @@
     body[data-lp="b"] .stack{margin-top:44px}
 
     body[data-lp="c"] .top-grid{grid-template-columns:1fr 1fr;gap:11px;align-items:stretch}
-    body[data-lp="c"] .top-grid > div:first-child{grid-column:1/-1}
+    body[data-lp="c"] .textcol{grid-column:1/-1}
     body[data-lp="c"] .shot{display:block;order:2;max-height:none;height:100%}
     body[data-lp="c"] .shot img{height:100%;min-height:180px;object-fit:cover}
     body[data-lp="c"] .stack{order:3;margin-top:0;padding:13px 11px 11px}
@@ -207,8 +207,8 @@
   .zipwidget #zipout{margin-top:10px;font-size:1rem}
   @media(min-width:901px){
     .top-grid{grid-template-rows:auto 1fr}
-    .top-grid > div:nth-child(1){grid-column:1;grid-row:1}
-    .top-grid > div:nth-child(2){grid-column:2;grid-row:1 / span 2}
+    .textcol{grid-column:1;grid-row:1}
+    .rightcol{grid-column:2;grid-row:1 / span 2}
     .top-grid > .zipwidget{grid-column:1;grid-row:2;margin-top:0}
   }
   @media(max-width:900px){
@@ -219,7 +219,7 @@
      The photo lives in the gallery further down instead. */
   body[data-lp="d"] .top-grid{grid-template-columns:1fr;max-width:640px;margin:0 auto;gap:0;
                               text-align:center;padding-top:38px}
-  body[data-lp="d"] .top-grid > div:nth-child(2){display:contents}
+  body[data-lp="d"] .rightcol{display:contents}
   body[data-lp="d"] .shot{display:none}
   body[data-lp="d"] .lead{margin-left:auto;margin-right:auto}
   body[data-lp="d"] .cta{margin:0 auto}
@@ -228,7 +228,7 @@
   body[data-lp="d"] .zipwidget{max-width:none;margin-top:16px;text-align:left}
   body[data-lp="d"] .zipwidget .zipbox{max-width:none}
   @media(min-width:901px){
-    body[data-lp="d"] .top-grid > div:nth-child(1){grid-column:1;grid-row:auto}
+    body[data-lp="d"] .textcol{grid-column:1;grid-row:auto}
     body[data-lp="d"] .top-grid > .zipwidget{grid-column:1;grid-row:auto}
   }
   /* A, nudged (Luke 8/31): the left column was top-heavy against a taller right
@@ -298,10 +298,18 @@
      that is where the handoff photo goes */
   body[data-lp="d"] .top-grid{position:relative}
   body[data-lp="d"] .heroside{display:none}
+  /* Two real columns with a real gap, rather than a photo floating beside a centred
+     block — that was what made it feel crowded on the left. (Luke 8/31) */
   @media(min-width:1180px){
-    body[data-lp="d"] .heroside{display:block;position:absolute;left:-322px;top:50%;
-                                transform:translateY(-50%);width:286px;height:430px;
-                                object-fit:cover;object-position:center 30%;border-radius:14px;margin:0}
+    body[data-lp="d"] .top-grid{max-width:1000px;margin:0 auto;justify-content:center;
+                                grid-template-columns:286px 640px;column-gap:64px;align-items:center}
+    body[data-lp="d"] .heroside{display:block;position:static;grid-column:1;grid-row:1 / span 6;
+                                width:286px;height:440px;object-fit:cover;object-position:center 30%;
+                                border-radius:14px;margin:0;align-self:center}
+    body[data-lp="d"] .textcol,
+    body[data-lp="d"] .rightcol{grid-column:2}
+    body[data-lp="d"] .stack{grid-column:2}
+    body[data-lp="d"] .shot{display:none}
   }
 </style>
 </head>
@@ -314,7 +322,8 @@
 
 <!-- ABOVE THE FOLD: headline · menu button · urgency · bonus stack · secondary capture -->
 <section><div class="wrap top-grid">
-  <div>
+  <img class="heroside" src="images/doorstep.jpg" alt="A customer bringing her Strong Kitchen delivery in through the front door">
+  <div class="textcol">
     <h1 id="h1">Meal prep delivery in Connecticut</h1>
     <p class="lead" id="sub">Cooked from scratch in Hamden. Delivered across New Haven, Hartford and
     Fairfield counties and beyond.</p>
@@ -323,8 +332,6 @@
 
     <p class="urg"><span>&#128197;</span><span><b>Order by Wednesday midnight, eat Sunday.</b></span></p>
 
-    <img class="heroside" src="images/doorstep.jpg" alt="A customer bringing her Strong Kitchen delivery in through the front door">
-
     <div class="teaser" aria-hidden="true">
       <span>Plus a free gift in each of your first four orders</span>
       <span class="arw">&#8595;</span>
@@ -332,7 +339,7 @@
 
   </div>
 
-  <div>
+  <div class="rightcol">
     <div class="shot"><img src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals" width="1200" height="900"></div>
     <div class="stack">
       <h2>Your first four orders include a free gift</h2>
