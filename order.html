@@ -32,17 +32,28 @@
   .top-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:36px;align-items:start;padding:30px 0 8px}
   .shot img{border-radius:14px}
   @media(max-width:900px){
-    .top-grid{grid-template-columns:1fr;gap:22px;padding-top:18px}
-    .shot{order:-1;max-height:200px;overflow:hidden;border-radius:14px}
-    .shot img{height:200px;object-fit:cover;object-position:center 55%}
+    .top-grid{grid-template-columns:1fr;gap:13px;padding-top:14px}
+    /* let the right column's children join the grid so the offer can sit above the photo */
+    .top-grid > div:last-child{display:contents}
+    .top-grid > div:first-child{order:1}
+    .stack{order:2;margin-top:0}
+    .shot{order:3;max-height:190px;overflow:hidden;border-radius:14px}
+    .shot img{height:190px;object-fit:cover;object-position:center 55%}
     .cta,.urg{max-width:none}
+    /* compact the tiles: the label does the work, the sentence can wait */
+    .stack{padding:16px 16px 14px}
+    .stack h2{font-size:1.12rem}
+    .stack .sub{font-size:.9rem;margin-bottom:12px}
+    .stack li{padding:9px 10px;gap:8px}
+    .stack b{font-size:.95rem}
+    .stack span.d{display:none}
   }
 
   /* bonus stack — above the fold, framed as automatic rather than claimable */
   .stack{background:var(--forest);border-radius:14px;padding:20px 20px 18px;color:#fff;margin-top:18px}
   .stack h2{color:#fff;font-size:1.24rem;margin-bottom:4px}
   .stack .sub{color:#c8cfbb;font-size:.97rem;margin-bottom:15px}
-  .stack ol{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .stack ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:9px}
   .stack li{display:flex;gap:11px;align-items:flex-start;background:#3a4726;border:1px solid #4d5b34;
             border-radius:9px;padding:11px 13px}
   .stack .ord{flex:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--forest);
@@ -101,11 +112,31 @@
   .fact .v{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;font-size:1.5rem;color:var(--forest)}
   .fact .k{font-size:.87rem;color:var(--ink2)}
 
+  .faq{padding:44px 0;border-top:1px solid var(--line)}
+  .qa{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+  .qa .q{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .qa b{display:block;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.06rem;color:var(--forest);margin-bottom:5px}
+  .qa p{font-size:1rem;color:var(--ink2);line-height:1.5}
+  @media(max-width:760px){.qa{grid-template-columns:1fr;gap:12px}}
   .last{padding:44px 0;text-align:center}
   .last h2{font-size:1.85rem;margin-bottom:8px}
   .last p{color:var(--ink2);margin-bottom:18px}
   .last .cta{margin:0 auto}
   .last .later{max-width:520px;margin:34px auto 0;text-align:left}
+  /* Kept last on purpose: these must beat the base .stack rules above them.
+     On a phone the tile label carries the offer; the sentence can wait. */
+  @media(max-width:900px){
+    .lead{margin-bottom:13px;font-size:1.06rem}
+    .urg{margin-top:10px;padding:10px 13px}
+    .stack{padding:14px 16px 12px}
+    .stack h2{margin-bottom:2px}
+    .stack span.d{display:none !important}
+    .stack li{padding:10px 11px;gap:8px;align-items:center}
+    .stack .ord{margin-top:0}
+    .stack b{font-size:.97rem;line-height:1.2}
+    .stack ol{gap:8px}
+    .stack .sub{margin-bottom:10px}
+  }
 </style>
 </head>
 <body class="lp">
@@ -133,7 +164,7 @@
     <div class="shot"><img src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals" width="1200" height="900"></div>
     <div class="stack">
       <h2>Your first four orders include a free gift</h2>
-      <div class="sub">Your first order comes with one, and they keep coming after that. Nothing to sign up for, no code to enter.</div>
+      <div class="sub">Nothing to sign up for, no code to enter.</div>
       <ol>
         <li><span class="ord">1</span><div><b>Free Strong Sauce</b><span class="d">A full bottle of Firecracker in your first box, with a note from Luke.</span></div></li>
         <li><span class="ord">2</span><div><b>Free snack</b><span class="d">An SK Snack, tucked into box two.</span></div></li>
@@ -146,7 +177,7 @@
 
 <!-- SERVICE AREA — real zips, real days -->
 <section class="area"><div class="wrap">
-  <h2>Do we deliver to you?</h2>
+  <h2 id="area-h">Do we deliver to you?</h2>
   <p class="lead">103 Connecticut towns — New Haven, Hartford and Fairfield counties and beyond.
   Put in your zip and we’ll know in a second.</p>
   <div class="zipbox">
@@ -174,7 +205,7 @@
   </div>
   <div class="gallery">
     <img src="images/meal-pulled-chicken.jpg" alt="A Strong Kitchen meal">
-    <img src="images/sauce-bottles.jpg" alt="Strong Sauce">
+    <img src="images/handoff.jpg" alt="Luke handing over a Strong Kitchen bag">
     <img src="images/treat-bars.jpg" alt="SK Snacks">
   </div>
   <a class="cta mid" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
@@ -182,6 +213,31 @@
 
 <!-- No $0 Insider activation box here, deliberately (Luke 8/31): a third action competes with
      the menu. The gift story is carried in copy above and confirmed by email after the first order. -->
+
+<!-- FAQ — the questions a search visitor actually arrives with -->
+<section class="faq"><div class="wrap">
+  <h2 id="faq-h">Questions people ask</h2>
+  <div class="qa">
+    <div class="q"><b>How much are the meals?</b>
+      <p>Most are <strong>$15 to $18</strong> depending on the dish and the portion style. No membership
+      fee, no minimum order, and delivery is included in our area.</p></div>
+    <div class="q"><b>Do I have to subscribe?</b>
+      <p>No contracts. Order &agrave; la carte &mdash; nothing to commit to. Order every week, or once and
+      never again.</p></div>
+    <div class="q"><b>When will I get my food?</b>
+      <p>Order by Wednesday at midnight and it arrives that Sunday or Monday. We cook after the deadline,
+      so there is no same-day option.</p></div>
+    <div class="q"><b>Is it fresh or frozen?</b>
+      <p>Fresh, never frozen. Everything is cooked from scratch in our Hamden kitchen that same weekend
+      and keeps in the fridge through the week.</p></div>
+    <div class="q"><b>How do I heat it?</b>
+      <p>Three minutes in the microwave or about fifteen in the oven. It arrives fully cooked in a sealed
+      tray &mdash; nothing to prepare.</p></div>
+    <div class="q"><b>What if I don't like something?</b>
+      <p>Tell us and we replace it free. No forms, no argument.</p></div>
+  </div>
+  <a class="cta mid" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
+</div></section>
 
 <!-- TRUST -->
 <section class="trust"><div class="wrap">
@@ -205,7 +261,7 @@
 </div></section>
 
 <section class="last"><div class="wrap narrow">
-  <h2>Have a look at this week's menu</h2>
+  <h2 id="last-h">Have a look at this week's menu</h2>
   <p>No contracts. Order &agrave; la carte &mdash; nothing to commit to.</p>
   <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
 
@@ -237,13 +293,25 @@ window.TSK_LP = { campaign: 'search-order-lp', fallbackSource: 'order-lp', leadS
 </script>
 <script>
 (function(){
+
+  // Repeat the town through the page the way local service pages do. Two sources:
+  // the ad's ?place= (what they searched), and the zip check (what the data confirms).
+  function sayTown(name, confirmed){
+    if (!name) return;
+    document.getElementById('h1').textContent = 'Meal prep delivery in ' + name;
+    document.title = 'Meal Prep Delivery in ' + name;
+    var areaH = document.getElementById('area-h');
+    if (areaH) areaH.textContent = confirmed ? 'Yes — we deliver to ' + name + '.' : 'Do we deliver to ' + name + '?';
+    var faqH = document.getElementById('faq-h');
+    if (faqH) faqH.textContent = 'Questions from ' + name + ' customers';
+    var lastH = document.getElementById('last-h');
+    if (lastH) lastH.textContent = 'This week\'s menu, delivered in ' + name;
+  }
+
   // Message match: an ad group can pass ?place=New Haven and the headline mirrors the ad.
   var q = new URLSearchParams(location.search);
   var place = (q.get('place') || '').replace(/[^A-Za-z .'-]/g, '').slice(0, 40).trim();
-  if (place) {
-    document.getElementById('h1').textContent = 'Meal prep delivery in ' + place;
-    document.title = 'Meal Prep Delivery in ' + place;
-  }
+  if (place) sayTown(place, false);
 
   // Service-area check, driven by the real delivery-areas file (regenerate with build_zips.py).
   var ZIPS = null;
@@ -262,7 +330,8 @@ window.TSK_LP = { campaign: 'search-order-lp', fallbackSource: 'order-lp', leadS
     if (z.length !== 5) { out.className = 'no'; out.textContent = 'Enter all five digits and we\'ll check.'; return; }
     if (!ZIPS) { out.className = 'no'; out.textContent = 'One moment…'; return; }
     var hit = ZIPS[z];
-    if (hit) { out.className = ''; out.textContent = '✓ Yes — we deliver to ' + hit[0] + ' on ' + hit[1] + '.'; }
+    if (hit) { out.className = ''; out.textContent = '✓ Yes — we deliver to ' + hit[0] + ' on ' + hit[1] + '.';
+               sayTown(hit[0], true); }
     else { out.className = 'no'; out.textContent = 'Not yet, sorry — that one is outside our delivery area for now.'; }
   }
   document.getElementById('zipgo').addEventListener('click', check);

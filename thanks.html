@@ -11,6 +11,19 @@
 <link rel="stylesheet" href="styles.css">
 <!-- Google Tag Manager (same container as thestrongkitchen.com) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KTPCPN88');</script>
+<style>
+  /* The offer should be what peeks above the fold here, not the logistics —
+     the photo shrinks and how-it-works moves below the bonus tiles. */
+  .how-after{padding:8px 0 34px}
+  @media (max-width:820px){
+    .hero{padding:22px 0 20px}
+    .hero .art{max-height:150px;overflow:hidden;border-radius:12px}
+    .hero .art img{height:150px;object-fit:cover}
+    .hero h1{font-size:1.75rem}
+    .boxes{padding-top:22px}
+    .boxes .tiles{grid-template-columns:1fr 1fr;gap:10px}
+  }
+</style>
 </head>
 <body class="thanks">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTPCPN88" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -26,16 +39,10 @@
     <span class="eyebrow" id="eb">SK Insider activated</span>
     <h1 id="h1ct">Your bonuses are waiting<span id="hi"></span>.</h1>
     <p class="sub">Check your inbox — the first email is on its way from luke@thestrongkitchen.com. While you’re here:</p>
-    <h2 style="font-size:1.15rem;margin-top:10px">How the week works</h2>
-    <ol class="steps">
-      <li><strong>Order any day.</strong> The menu’s always open.</li>
-      <li><strong>Wednesday midnight is the ordering deadline.</strong> Whatever you order by then is on that weekend’s delivery.</li>
-      <li><strong>Sunday or Monday, it’s at your door</strong> — or pick up at our kitchen in Hamden.</li>
-    </ol>
     <a class="btn inline" href="https://thestrongkitchen.com/menus" data-menu>See this week’s menu →</a>
     <p class="fine" style="text-align:left">Order à la carte — nothing to commit to. The bonuses are yours either way.</p>
   </div>
-  <div class="art"><img src="images/sauce-bottles.jpg" alt="Strong Sauce bottles" width="1200" height="900"></div>
+  <div class="art"><img src="images/handoff.jpg" alt="Luke handing over a Strong Kitchen bag" width="1024" height="683"></div>
 </div></section>
 
 <section class="boxes" id="ct-boxes"><div class="wrap">
@@ -47,6 +54,15 @@
     <div class="tile surprise"><div class="art">?</div><div class="t"><span class="n">Order 4</span><b>A surprise</b>We won’t spoil it. And it doesn’t stop at four.</div></div>
   </div>
   <p class="note">Just order. Your first order starts the clock; each bonus ships with the next box. No code. You won’t see them in your cart, on purpose.</p>
+</div></section>
+
+<section class="how-after"><div class="wrap narrow">
+  <h2 style="font-size:1.3rem">How the week works</h2>
+  <ol class="steps">
+    <li><strong>Order any day.</strong> The menu’s always open.</li>
+    <li><strong>Wednesday midnight is the ordering deadline.</strong> Whatever you order by then is on that weekend’s delivery.</li>
+    <li><strong>Sunday or Monday, it’s at your door</strong> — or pick up at our kitchen in Hamden.</li>
+  </ol>
 </div></section>
 
 <!-- Not Connecticut -->

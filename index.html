@@ -49,6 +49,15 @@
   .hero .art img{max-height:300px;object-fit:cover}
   @media (max-width:820px){
     .hero{padding-top:26px}
+    /* zip and email share a row so the button clears the fold */
+    .card .form{display:grid;grid-template-columns:1fr 1fr;column-gap:10px}
+    .card .form label[for=zip]{grid-area:1/1} .card .form #zip{grid-area:2/1}
+    .card .form label[for=email]{grid-area:1/2} .card .form #email{grid-area:2/2}
+    .card .form button,.card .form .fine,.card .form .msg,.card .form .hp{grid-column:1/-1}
+    .card .form label span{display:none}          /* the long hint eats a whole line */
+    .card .head{padding-bottom:10px}
+    .card .head .pr{font-size:.95rem}
+    .hero .sub{font-size:1rem;line-height:1.5}
     .hero .wrap{grid-template-columns:1fr}
     .hero .art{order:0;max-height:none;overflow:visible}
     .hero .art img{max-height:210px;border-radius:12px}
