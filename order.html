@@ -231,6 +231,78 @@
     body[data-lp="d"] .top-grid > div:nth-child(1){grid-column:1;grid-row:auto}
     body[data-lp="d"] .top-grid > .zipwidget{grid-column:1;grid-row:auto}
   }
+  /* A, nudged (Luke 8/31): the left column was top-heavy against a taller right
+     column, leaving a hole underneath. Centring it vertically and dropping the
+     button lower puts the action in the middle of the eye-line. */
+  @media(min-width:901px){
+    .top-grid{align-items:center}
+    .cta{margin-top:26px}
+    .urg{margin-top:14px}
+  }
+
+  /* e — no thumbnails in the bar; the handoff photo fills the dead space instead. */
+  .heroside{display:none}
+  body[data-lp="e"] .heroside{display:block;width:100%;max-width:430px;height:196px;
+                              object-fit:cover;object-position:center 40%;border-radius:14px;margin-top:20px}
+  body[data-lp="e"] .bi{display:none}
+  body[data-lp="e"] .stack .ord{position:static;width:20px;height:20px;font-size:.7rem;margin:0 auto}
+  body[data-lp="e"] .stack li{gap:7px}
+  @media(min-width:901px){
+    body[data-lp="e"] .top-grid{align-items:start}
+    body[data-lp="e"] .cta{margin-top:22px}
+  }
+  @media(max-width:900px){
+    body[data-lp="e"] .heroside{max-width:none;height:150px;margin-top:14px}
+  }
+  /* ---- bonuses, expanded below the fold ---- */
+  .gifts{padding:44px 0;border-top:1px solid var(--line)}
+  .gift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+  .gifts .g{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+  .gifts .g img,.gifts .qmark{width:100%;height:132px;object-fit:cover;display:block}
+  .gifts .qmark{background:var(--cream);color:var(--gold-d);display:flex;align-items:center;
+                justify-content:center;font-family:"Plus Jakarta Sans",Inter,sans-serif;
+                font-weight:800;font-size:2.4rem}
+  .gifts .gt{padding:14px 16px 16px}
+  .gifts .n{display:inline-block;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;
+            font-weight:700;color:var(--green-d);background:var(--green-l);border-radius:999px;
+            padding:3px 9px;margin-bottom:7px}
+  .gifts .gt b{display:block;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.1rem;
+               color:var(--forest);margin-bottom:4px}
+  .gifts .gt p{font-size:.96rem;color:var(--ink2);line-height:1.45}
+  @media(max-width:820px){
+    .gift-grid{grid-template-columns:1fr 1fr;gap:12px}
+    .gifts .g img,.gifts .qmark{height:104px}
+    .gifts .gt{padding:12px 13px 14px}
+    .gifts .gt b{font-size:1rem}
+    .gifts .gt p{font-size:.9rem}
+  }
+
+  /* ---- d: no thumbnails up top, photo in the margin, everything centred ---- */
+  body[data-lp="d"] .bi{display:none}
+  body[data-lp="d"] .stack .ord{position:static;width:20px;height:20px;font-size:.7rem;margin:0 auto}
+  body[data-lp="d"] .stack li{gap:7px}
+
+  body[data-lp="d"] .area,
+  body[data-lp="d"] .how,
+  body[data-lp="d"] .gifts,
+  body[data-lp="d"] .faq{text-align:center}
+  body[data-lp="d"] .area .lead,
+  body[data-lp="d"] .gifts .lead{margin-left:auto;margin-right:auto}
+  body[data-lp="d"] .zipbox{margin-left:auto;margin-right:auto}
+  body[data-lp="d"] .s .num{margin-left:auto;margin-right:auto}
+  body[data-lp="d"] .qa .q,
+  body[data-lp="d"] .gifts .gt{text-align:center}
+  body[data-lp="d"] .gifts .n{margin-left:auto;margin-right:auto}
+
+  /* the centred column leaves an empty margin either side on a wide screen —
+     that is where the handoff photo goes */
+  body[data-lp="d"] .top-grid{position:relative}
+  body[data-lp="d"] .heroside{display:none}
+  @media(min-width:1180px){
+    body[data-lp="d"] .heroside{display:block;position:absolute;left:-330px;top:50%;
+                                transform:translateY(-50%);width:290px;height:330px;
+                                object-fit:cover;object-position:center 40%;border-radius:14px;margin:0}
+  }
 </style>
 </head>
 <body class="lp">
@@ -250,6 +322,8 @@
     <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
 
     <p class="urg"><span>&#128197;</span><span><b>Order by Wednesday midnight, eat Sunday.</b></span></p>
+
+    <img class="heroside" src="images/handoff.jpg" alt="Luke handing over a Strong Kitchen bag">
 
     <div class="teaser" aria-hidden="true">
       <span>Plus a free gift in each of your first four orders</span>
@@ -311,6 +385,36 @@
 
 <!-- No $0 Insider activation box here, deliberately (Luke 8/31): a third action competes with
      the menu. The gift story is carried in copy above and confirmed by email after the first order. -->
+
+<!-- The bar above is the promise; this is the detail, with room to breathe. -->
+<section class="gifts"><div class="wrap">
+  <h2>What comes in your first four boxes</h2>
+  <p class="lead">One in every box, packed by hand. Nothing to sign up for and no code to enter —
+  they arrive because you ordered.</p>
+  <div class="gift-grid">
+    <div class="g">
+      <img src="images/sauce-single.jpg" alt="A bottle of Firecracker Strong Sauce">
+      <div class="gt"><span class="n">Order 1</span><b>Free Strong Sauce</b>
+        <p>A full bottle of Firecracker in your first box, with a note from Luke.</p></div>
+    </div>
+    <div class="g">
+      <img src="images/treat-bars.jpg" alt="An SK Snack">
+      <div class="gt"><span class="n">Order 2</span><b>Free snack</b>
+        <p>An SK Snack, tucked into box two for the afternoon you're between meals.</p></div>
+    </div>
+    <div class="g">
+      <img src="images/meal-pulled-chicken.jpg" alt="A Strong Kitchen meal">
+      <div class="gt"><span class="n">Order 3</span><b>Free meal</b>
+        <p>A whole meal on us in box three, for the day that runs long.</p></div>
+    </div>
+    <div class="g">
+      <div class="qmark">?</div>
+      <div class="gt"><span class="n">Order 4</span><b>A surprise</b>
+        <p>We won't spoil it. And it doesn't stop at four.</p></div>
+    </div>
+  </div>
+  <a class="cta mid" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
+</div></section>
 
 <!-- FAQ — the questions a search visitor actually arrives with -->
 <section class="faq"><div class="wrap">
@@ -410,7 +514,7 @@ window.TSK_LP = { campaign: 'search-order-lp', fallbackSource: 'order-lp', leadS
   var q = new URLSearchParams(location.search);
   // Layout variant, for side-by-side comparison on a phone: ?lp=a (default), b, c.
   var lp = (q.get('lp') || 'a').toLowerCase();
-  if (['a','b','c','d'].indexOf(lp) >= 0) document.body.setAttribute('data-lp', lp);
+  if (['a','d'].indexOf(lp) >= 0) document.body.setAttribute('data-lp', lp);
 
   var place = (q.get('place') || '').replace(/[^A-Za-z .'-]/g, '').slice(0, 40).trim();
   if (place) sayTown(place, false);
