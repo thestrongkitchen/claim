@@ -13,10 +13,13 @@
   ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'].forEach(function (k) {
     if (params.get(k)) carry[k] = params.get(k);
   });
+  // A page may override its own labels (window.TSK_LP, set before this script) so
+  // separate ad destinations stay distinguishable in GA4. Claim-page defaults unchanged.
+  var LP = window.TSK_LP || {};
   if (!carry.utm_source) {
-    if (carry.gclid) { carry.utm_source = 'google'; carry.utm_medium = 'cpc'; carry.utm_campaign = 'search-sk-insider-claim'; }
-    else if (carry.fbclid) { carry.utm_source = 'facebook'; carry.utm_medium = 'paid-social'; carry.utm_campaign = 'first-month-bonuses'; }
-    else { carry.utm_source = 'claim-lp'; carry.utm_medium = 'referral'; carry.utm_campaign = 'first-month-bonuses'; }
+    if (carry.gclid) { carry.utm_source = 'google'; carry.utm_medium = 'cpc'; carry.utm_campaign = LP.campaign || 'search-sk-insider-claim'; }
+    else if (carry.fbclid) { carry.utm_source = 'facebook'; carry.utm_medium = 'paid-social'; carry.utm_campaign = LP.campaign || 'first-month-bonuses'; }
+    else { carry.utm_source = LP.fallbackSource || 'claim-lp'; carry.utm_medium = 'referral'; carry.utm_campaign = LP.campaign || 'first-month-bonuses'; }
   }
   function withCarry(url) {
     var u = new URL(url, location.href);
@@ -44,7 +47,7 @@
     if (zip.length !== 5) return show('err', 'Enter your 5-digit zip so we only send you what we actually deliver.');
     var isCT = zip.indexOf('06') === 0;
 
-    var props = { zip_code: zip, is_connecticut: isCT, lead_source: 'first-month-bonuses-lp', signup_page: location.pathname, sk_insider_claim: true };
+    var props = { zip_code: zip, is_connecticut: isCT, lead_source: LP.leadSource || 'first-month-bonuses-lp', signup_page: location.pathname, sk_insider_claim: true };
     Object.keys(carry).forEach(function (k) { props[k] = carry[k]; });
 
     var body = { data: { type: 'subscription', attributes: {
@@ -66,7 +69,7 @@
       if (!r.ok && r.status !== 202) throw new Error('status ' + r.status);
       // Newsletter hand-off happens in Klaviyo (end of nurture flow, or on first purchase) — not here. Luke 8/22.
       try { if (window.dataLayer) window.dataLayer.push({ event: 'generate_lead', lead_is_ct: isCT, lead_zip: zip }); } catch (e) {}
-      var next = new URL('thanks.html', location.href);
+      var next = new URL(LP.thanksPage || 'thanks.html', location.href);
       next.searchParams.set('ct', isCT ? '1' : '0');
       if (first) next.searchParams.set('n', first);
       Object.keys(carry).forEach(function (k) { next.searchParams.set(k, carry[k]); });

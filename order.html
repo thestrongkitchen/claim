@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meal Prep Delivery in Connecticut</title>
+<meta name="description" content="Fresh, high-protein meals cooked in Hamden and delivered across New Haven, Hartford and Fairfield counties and beyond. Order by Wednesday midnight, eat Sunday.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://claim.thestrongkitchen.com/order.html">
+<link rel="icon" href="images/logo-text.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Paid-search ad landing page (Variant A).
+     Above the fold: location headline + menu button + urgency + bonus stack + a
+     non-blocking capture. Menu buttons repeat down the page so a visitor who is
+     still warming up can leave for the menu at any point. Nav is deliberately absent. */
+  .lp h1{font-size:clamp(1.95rem,6vw,2.9rem);margin-bottom:12px}
+  .lead{font-size:1.12rem;color:var(--ink2);margin-bottom:18px;max-width:33em}
+  .cta{display:block;width:100%;max-width:430px;text-align:center;background:var(--green);color:#fff !important;
+       font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;font-size:1.16rem;text-decoration:none;
+       border-radius:10px;padding:18px 26px;box-shadow:0 4px 16px rgba(115,147,60,.28)}
+  .cta:hover{background:var(--green-d)}
+  .cta.mid{margin:26px auto 0}
+  .urg{display:flex;gap:10px;align-items:flex-start;margin-top:12px;max-width:430px;
+       background:var(--cream);border-left:4px solid var(--gold);border-radius:0 9px 9px 0;padding:12px 15px;
+       font-size:1.01rem;color:var(--forest);line-height:1.45}
+  .urg b{font-weight:700}
+
+  .top-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:36px;align-items:start;padding:30px 0 8px}
+  .shot img{border-radius:14px}
+  @media(max-width:900px){
+    .top-grid{grid-template-columns:1fr;gap:22px;padding-top:18px}
+    .shot{order:-1;max-height:200px;overflow:hidden;border-radius:14px}
+    .shot img{height:200px;object-fit:cover;object-position:center 55%}
+    .cta,.urg{max-width:none}
+  }
+
+  /* bonus stack — above the fold, framed as automatic rather than claimable */
+  .stack{background:var(--forest);border-radius:14px;padding:20px 20px 18px;color:#fff;margin-top:18px}
+  .stack h2{color:#fff;font-size:1.24rem;margin-bottom:4px}
+  .stack .sub{color:#c8cfbb;font-size:.97rem;margin-bottom:15px}
+  .stack ol{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .stack li{display:flex;gap:11px;align-items:flex-start;background:#3a4726;border:1px solid #4d5b34;
+            border-radius:9px;padding:11px 13px}
+  .stack .ord{flex:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--forest);
+              font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;font-size:.8rem;
+              display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .stack b{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1rem}
+  .stack span.d{display:block;color:#c3ccb4;font-size:.93rem;line-height:1.42;margin-top:1px}
+
+  /* secondary capture — present, never blocking */
+  .later{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px;position:relative}
+  .later h3{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.04rem;color:var(--forest);margin-bottom:3px}
+  .later p{font-size:.94rem;color:var(--ink2);margin-bottom:11px}
+  .later .fields{display:flex;gap:8px;flex-wrap:wrap}
+  .later input{flex:1;min-width:130px;font:inherit;font-size:.97rem;padding:11px 12px;border:1px solid var(--line);border-radius:8px}
+  .later input:focus{outline:2px solid var(--green);outline-offset:1px}
+  .later button{font:inherit;font-weight:700;font-family:"Plus Jakarta Sans",Inter,sans-serif;background:var(--forest);
+                color:#fff;border:0;border-radius:8px;padding:11px 20px;cursor:pointer}
+  .later button:hover{background:#3d4c26}
+  .later .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .msg{font-size:.93rem;margin-top:9px}
+  .msg.err{color:var(--err)}
+  .msg.ok{color:var(--green-d)}
+
+  /* service area */
+  .area{background:var(--green-l);padding:40px 0;margin-top:32px}
+  .zipbox{display:flex;gap:9px;flex-wrap:wrap;max-width:430px;margin-top:14px}
+  .zipbox input{flex:1;min-width:130px;font:inherit;font-size:1.05rem;padding:13px 14px;border:1px solid var(--line);border-radius:8px}
+  .zipbox button{font:inherit;font-weight:700;font-family:"Plus Jakarta Sans",Inter,sans-serif;background:var(--green);
+                 color:#fff;border:0;border-radius:8px;padding:13px 22px;cursor:pointer}
+  #zipout{margin-top:13px;font-size:1.06rem;font-weight:600;color:var(--forest);min-height:1.4em}
+  #zipout.no{color:var(--ink2);font-weight:400}
+  .towns{margin-top:18px;font-size:.95rem;color:var(--ink2);line-height:1.7}
+  .towns b{color:var(--forest)}
+
+  .how{padding:44px 0}
+  .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+  .s .num{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;
+       font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;display:flex;align-items:center;
+       justify-content:center;margin-bottom:11px}
+  .s b{display:block;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.2rem;color:var(--forest);margin-bottom:5px}
+  .s p{color:var(--ink2);font-size:1.01rem}
+  @media(max-width:760px){.steps3{grid-template-columns:1fr;gap:18px}}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+  .gallery img{border-radius:12px;width:100%;height:165px;object-fit:cover}
+  @media(max-width:720px){.gallery{grid-template-columns:1fr 1fr}.gallery img{height:128px}}
+
+  .trust{background:var(--green-l);padding:42px 0}
+  .stars{color:var(--gold-d);font-size:1.2rem;letter-spacing:.06em}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 24px}
+  .qt{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px 19px}
+  .qt p{font-size:.99rem;line-height:1.55}
+  .qt .who{font-size:.89rem;color:var(--ink2);font-weight:600;margin-top:9px}
+  @media(max-width:860px){.quotes{grid-template-columns:1fr}}
+  .facts{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #dfe4d2;padding-top:20px}
+  .fact{text-align:center;flex:1 1 150px;min-width:0}
+  .fact .v{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;font-size:1.5rem;color:var(--forest)}
+  .fact .k{font-size:.87rem;color:var(--ink2)}
+
+  .last{padding:44px 0;text-align:center}
+  .last h2{font-size:1.85rem;margin-bottom:8px}
+  .last p{color:var(--ink2);margin-bottom:18px}
+  .last .cta{margin:0 auto}
+  .last .later{max-width:520px;margin:34px auto 0;text-align:left}
+</style>
+</head>
+<body class="lp">
+
+<header class="top"><div class="wrap">
+  <a href="https://thestrongkitchen.com" data-carry><img src="images/logo-text.png" alt="The Strong Kitchen"></a>
+  <span class="tag">Cooked in Hamden, CT</span>
+</div></header>
+
+<!-- ABOVE THE FOLD: headline · menu button · urgency · bonus stack · secondary capture -->
+<section><div class="wrap top-grid">
+  <div>
+    <h1 id="h1">Meal prep delivery in Connecticut</h1>
+    <p class="lead" id="sub">Fresh, high-protein meals cooked from scratch in our Hamden kitchen and
+    delivered across New Haven, Hartford and Fairfield counties and beyond. Fully cooked — heat and eat.</p>
+
+    <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
+
+    <p class="urg"><span>&#128197;</span><span><b>Order by Wednesday midnight, eat Sunday.</b> Everything
+    ordered by then goes out that weekend. Miss it and you're on the following Sunday.</span></p>
+
+  </div>
+
+  <div>
+    <div class="shot"><img src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals" width="1200" height="900"></div>
+    <div class="stack">
+      <h2>Your first four orders include a free gift</h2>
+      <div class="sub">Your first order comes with one, and they keep coming after that. Nothing to sign up for, no code to enter.</div>
+      <ol>
+        <li><span class="ord">1</span><div><b>Free Strong Sauce</b><span class="d">A full bottle of Firecracker in your first box, with a note from Luke.</span></div></li>
+        <li><span class="ord">2</span><div><b>Free snack</b><span class="d">An SK Snack, tucked into box two.</span></div></li>
+        <li><span class="ord">3</span><div><b>Free meal</b><span class="d">A free meal on us in box three.</span></div></li>
+        <li><span class="ord">4</span><div><b>A surprise</b><span class="d">We won't spoil it. And it doesn't stop at four.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</div></section>
+
+<!-- SERVICE AREA — real zips, real days -->
+<section class="area"><div class="wrap">
+  <h2>Do we deliver to you?</h2>
+  <p class="lead">103 Connecticut towns — New Haven, Hartford and Fairfield counties and beyond.
+  Put in your zip and we’ll know in a second.</p>
+  <div class="zipbox">
+    <input id="zip" type="text" inputmode="numeric" maxlength="5" placeholder="Your zip code" aria-label="Zip code">
+    <button id="zipgo" type="button">Check</button>
+  </div>
+  <p id="zipout" aria-live="polite"></p>
+  <p class="towns"><b>Towns we deliver to:</b> <span id="townlist">Loading the list…</span></p>
+  <a class="cta mid" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps3">
+    <div class="s"><div class="num">1</div><b>Choose your meals</b>
+      <p>A new menu every week &mdash; nine or ten dishes, each in three portion styles depending on whether
+      you're leaning out, eating balanced, or chasing protein. Order as few or as many as you like.</p></div>
+    <div class="s"><div class="num">2</div><b>We deliver on your day</b>
+      <p>Order by Wednesday midnight and it's at your door Sunday or Monday, depending on your town.
+      Or collect it at the kitchen on Sanford Street in Hamden.</p></div>
+    <div class="s"><div class="num">3</div><b>Heat and eat</b>
+      <p>Everything arrives fully cooked in a sealed tray. Three minutes in the microwave, fifteen in the
+      oven. Fresh, never frozen, good in the fridge through the week.</p></div>
+  </div>
+  <div class="gallery">
+    <img src="images/meal-pulled-chicken.jpg" alt="A Strong Kitchen meal">
+    <img src="images/sauce-bottles.jpg" alt="Strong Sauce">
+    <img src="images/treat-bars.jpg" alt="SK Snacks">
+  </div>
+  <a class="cta mid" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
+</div></section>
+
+<!-- No $0 Insider activation box here, deliberately (Luke 8/31): a third action competes with
+     the menu. The gift story is carried in copy above and confirmed by email after the first order. -->
+
+<!-- TRUST -->
+<section class="trust"><div class="wrap">
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <h2 style="margin-top:5px">4.9 stars across 124+ Google reviews</h2>
+  <div class="quotes">
+    <div class="qt"><p>"I've been using food delivery services consistently for over 12 years. I knew very
+      quickly that TSK set themselves apart from the rest&hellip; What stands out MOST is their exceptional
+      food quality and chef inspired meals."</p><div class="who">&mdash; Marc</div></div>
+    <div class="qt"><p>"The prepared meals help to give me time back in my schedule and meet my nutrition
+      goals. I've tried other meal services before and felt that I was sacrificing flavor for healthy
+      meals. That is NOT the case with TSK."</p><div class="who">&mdash; Xan</div></div>
+    <div class="qt"><p>"Delicious, dependable and consistent. Been using SK for years &mdash; has made
+      nutrition super simple and convenient. 100% recommend!"</p><div class="who">&mdash; Michael</div></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="v">2&times;</div><div class="k">Best of New Haven, Prepared Meals</div></div>
+    <div class="fact"><div class="v">103</div><div class="k">Connecticut towns served</div></div>
+    <div class="fact"><div class="v">Hamden</div><div class="k">Licensed kitchen, 109 Sanford St</div></div>
+  </div>
+</div></section>
+
+<section class="last"><div class="wrap narrow">
+  <h2>Have a look at this week's menu</h2>
+  <p>No contracts. Order &agrave; la carte &mdash; nothing to commit to.</p>
+  <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>View this week's menu &rarr;</a>
+
+  <div class="later">
+    <h3>Not ready this week?</h3>
+    <p>Leave your email and we'll send the menu every Monday. Your bonuses keep until you order.</p>
+    <form id="claim-form" autocomplete="off">
+      <div class="fields">
+        <input class="hp" type="text" name="website" tabindex="-1" aria-hidden="true">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <input type="text" name="zip" inputmode="numeric" placeholder="Zip" required aria-label="Zip code" style="max-width:104px;flex:0 0 104px">
+        <button type="submit">Send it</button>
+      </div>
+      <p id="form-msg" class="msg"></p>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><strong>The Strong Kitchen</strong> &middot; 109 Sanford St Building 2, Hamden, CT 06514 &middot;
+     <a href="mailto:luke@thestrongkitchen.com">luke@thestrongkitchen.com</a></p>
+  <p>Didn't love a meal? We'll replace it free.</p>
+</div></footer>
+
+<script>
+// Read by app.js — keeps this ad destination separable from the claim page in
+// GA4 (campaign) and in Klaviyo (lead_source), and sends signups to its own thank-you.
+window.TSK_LP = { campaign: 'search-order-lp', fallbackSource: 'order-lp', leadSource: 'ad-landing-page' };
+</script>
+<script>
+(function(){
+  // Message match: an ad group can pass ?place=New Haven and the headline mirrors the ad.
+  var q = new URLSearchParams(location.search);
+  var place = (q.get('place') || '').replace(/[^A-Za-z .'-]/g, '').slice(0, 40).trim();
+  if (place) {
+    document.getElementById('h1').textContent = 'Meal prep delivery in ' + place;
+    document.title = 'Meal Prep Delivery in ' + place;
+  }
+
+  // Service-area check, driven by the real delivery-areas file (regenerate with build_zips.py).
+  var ZIPS = null;
+  var out = document.getElementById('zipout');
+  fetch('zips.json').then(function(r){ return r.json(); }).then(function(data){
+    ZIPS = data;
+    var towns = {};
+    Object.keys(ZIPS).forEach(function(z){ towns[ZIPS[z][0]] = 1; });
+    var list = Object.keys(towns).sort();
+    document.getElementById('townlist').textContent =
+      list.slice(0, 16).join(' · ') + ' and ' + (list.length - 16) + ' more.';
+  }).catch(function(){ /* checker stays quiet; the rest of the page is unaffected */ });
+
+  function check(){
+    var z = (document.getElementById('zip').value || '').replace(/[^0-9]/g, '').slice(0, 5);
+    if (z.length !== 5) { out.className = 'no'; out.textContent = 'Enter all five digits and we\'ll check.'; return; }
+    if (!ZIPS) { out.className = 'no'; out.textContent = 'One moment…'; return; }
+    var hit = ZIPS[z];
+    if (hit) { out.className = ''; out.textContent = '✓ Yes — we deliver to ' + hit[0] + ' on ' + hit[1] + '.'; }
+    else { out.className = 'no'; out.textContent = 'Not yet, sorry — that one is outside our delivery area for now.'; }
+  }
+  document.getElementById('zipgo').addEventListener('click', check);
+  document.getElementById('zip').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') { e.preventDefault(); check(); }
+  });
+})();
+</script>
+<script src="app.js?v=20260831"></script>
+</body>
+</html>
