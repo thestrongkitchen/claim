@@ -100,6 +100,16 @@
 
   /* images — four places only, per the brief */
   .heroimg{width:100%;height:auto;border-radius:14px;margin-top:30px;display:block}
+  /* Desktop: copy left, image right — otherwise the hero photo sits under the
+     offer block and falls off a laptop screen entirely. Everything below the
+     hero stays in the single 680px column. */
+  @media(min-width:900px){
+    .hero-lp .lpwrap{max-width:1080px;display:grid;grid-template-columns:1.02fr .98fr;
+                     gap:46px;align-items:center}
+    .hero-lp .herocopy{min-width:0}
+    .hero-lp .heroimg{margin-top:0;max-height:460px;object-fit:cover}
+    .hero-lp .sub{margin-bottom:22px}
+  }
   .split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
   .split img{width:100%;height:auto;max-height:360px;object-fit:cover;object-position:center 32%;border-radius:14px;display:block}
   .split.proof{grid-template-columns:.72fr 1fr}
@@ -127,6 +137,7 @@
 
 <!-- SECTION 1 — HERO -->
 <section class="hero-lp"><div class="lpwrap">
+  <div class="herocopy">
   <p class="eyebrow-lp">For people who keep buying lunch out</p>
   <h1>Get back eight hours a week and eat better than ever.</h1>
   <p class="sub">Healthy food you'll actually want to eat. Four free gifts across your first four orders:
@@ -137,6 +148,7 @@
   <p class="proofline"><span class="stars">★★★★★</span> <b>4.9</b> from 124+ Google reviews
   &middot; we&rsquo;ll replace any meal you don&rsquo;t love</p>
   <p class="undercta">No subscription, cancel or skip anytime.</p>
+  </div>
   <img class="heroimg" src="images/lp-hero-food.jpg" alt="Lifting a Strong Kitchen meal out of the fridge" width="1024" height="683">
 </div></section>
 
