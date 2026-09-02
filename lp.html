@@ -88,6 +88,8 @@
   .split img{width:100%;height:100%;max-height:340px;object-fit:cover;border-radius:14px;display:block}
   .split.proof{grid-template-columns:.72fr 1fr}
   .split.proof img{max-height:400px;object-position:center 20%}
+  .proofpic{margin:0}
+  .proofpic figcaption{font-size:.88rem;color:var(--ink2);font-weight:600;margin-top:8px;text-align:center}
   @media(max-width:640px){
     .split{grid-template-columns:1fr;gap:20px}
     .split img{max-height:240px}
@@ -137,16 +139,19 @@
 <!-- SECTION 4 — PROOF -->
 <section class="sec"><div class="lpwrap">
   <div class="split proof">
-    <img src="images/lp-proof-josh.jpg" alt="Josh Zelem, a Strong Kitchen customer" width="480" height="853">
+    <figure class="proofpic">
+      <img src="images/lp-proof-josh.jpg" alt="Josh Zelem, a Strong Kitchen customer" width="480" height="853">
+      <figcaption>Josh Zelem, customer</figcaption>
+    </figure>
     <div class="quotes">
+    <div class="qt">
+      <p>"Take one thing off of my plate."</p>
+      <div class="who">— Josh Zelem</div>
+    </div>
     <div class="qt">
       <p>"Strong Kitchen made my life so easy. Delicious fresh food at a very reasonable price. Since
       I no longer order the usual take out food, I'm saving money and losing weight!"</p>
       <div class="who">— Dena Dennis Klos</div>
-    </div>
-    <div class="qt">
-      <p>"Take one thing off of my plate."</p>
-      <div class="who">— Josh Zelem</div>
     </div>
     <div class="qt">
       <p>"My husband works 2nd shift so once I rush out of work I pick up our 4 year old and like to
