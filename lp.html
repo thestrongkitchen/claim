@@ -104,10 +104,11 @@
      offer block and falls off a laptop screen entirely. Everything below the
      hero stays in the single 680px column. */
   @media(min-width:900px){
-    .hero-lp .lpwrap{max-width:1080px;display:grid;grid-template-columns:1.02fr .98fr;
-                     gap:46px;align-items:center}
+    .hero-lp .lpwrap{max-width:1180px;display:grid;grid-template-columns:.9fr 1.1fr;
+                     gap:52px;align-items:center}
     .hero-lp .herocopy{min-width:0}
-    .hero-lp .heroimg{margin-top:0;max-height:460px;object-fit:cover}
+    .hero-lp .heroimg{margin-top:0;width:100%;aspect-ratio:4/3;max-height:none;
+                      object-fit:cover;object-position:center 45%}
     .hero-lp .sub{margin-bottom:22px}
   }
   .split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
