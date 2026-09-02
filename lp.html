@@ -24,6 +24,8 @@
 
   .sec{padding:52px 0}
   .sec + .sec{border-top:1px solid var(--line)}
+  .qh{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;font-size:1.62rem;
+      line-height:1.2;color:var(--forest);margin-bottom:20px;letter-spacing:-.01em}
 
   /* ---- hero ---- */
   .hero-lp{padding:44px 0 48px}
@@ -37,10 +39,11 @@
        box-shadow:0 4px 16px rgba(115,147,60,.28)}
   .cta:hover{background:var(--green-d)}
   .undercta{font-size:.95rem;color:var(--ink2);text-align:center;margin-top:11px}
-  .proofline{margin-top:7px;font-size:.92rem}
-  .proofline::first-letter{letter-spacing:.05em}
-  .hero-lp .proofline{color:var(--green-d)}
-  .final .proofline{color:#c8cfbb}
+  .proofline{margin-top:13px;font-size:1.02rem;text-align:center;color:var(--forest);line-height:1.5}
+  .proofline b{font-weight:700}
+  .proofline .stars{color:var(--gold-d);letter-spacing:.06em;font-size:1.1rem}
+  .final .proofline{color:#fff}
+  .final .proofline .stars{color:var(--gold)}
 
   /* ---- problem / solution ---- */
   .say{font-size:1.24rem;line-height:1.6;color:var(--forest)}
@@ -119,13 +122,15 @@
   <h1>Get back eight hours a week and eat better than ever.</h1>
   <p class="sub">Fresh meals, made and delivered. Your first four orders each come with a free bonus.</p>
   <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>Start my first order</a>
+  <p class="proofline"><span class="stars">★★★★★</span> <b>4.9</b> from 124+ Google reviews
+  &middot; we&rsquo;ll replace any meal you don&rsquo;t love</p>
   <p class="undercta">No subscription, cancel or skip anytime.</p>
-  <p class="undercta proofline">★★★★★ 4.9 from 124+ Google reviews &middot; we&rsquo;ll replace any meal you don&rsquo;t love</p>
   <img class="heroimg" src="images/lp-hero-food.jpg" alt="Lifting a Strong Kitchen meal out of the fridge" width="1024" height="683">
 </div></section>
 
 <!-- SECTION 2 — PROBLEM (no image, by the brief) -->
 <section class="sec"><div class="lpwrap say">
+  <h2 class="qh">Sound familiar?</h2>
   <p>It's noon, you've got thirty minutes, and there's nothing in the fridge. So it's the drive-thru
   again, or you skip it entirely.</p>
   <p class="quiet">It's not a willpower problem. You just never had a plan.</p>
@@ -133,6 +138,7 @@
 
 <!-- SECTION 3 — SOLUTION -->
 <section class="sec"><div class="lpwrap">
+  <h2 class="qh">So what's the plan?</h2>
   <div class="split">
     <div class="say">
       <p>This is that plan. Real meals, made fresh and delivered to you, ready when you are.
@@ -145,6 +151,7 @@
 
 <!-- SECTION 4 — PROOF -->
 <section class="sec"><div class="lpwrap">
+  <h2 class="qh">What do people say after they switch?</h2>
   <div class="split proof">
     <figure class="proofpic">
       <video src="josh.mp4" poster="images/lp-josh-poster.jpg" controls preload="none"
@@ -176,6 +183,7 @@
 
 <!-- SECTION 5 — BENEFITS (text only, by the brief) -->
 <section class="sec"><div class="lpwrap">
+  <h2 class="qh">What do I get for my money?</h2>
   <div class="bens">
     <div class="ben"><b>Ready when you are</b><p>No cooking, no cleanup.</p></div>
     <div class="ben"><b>Food you'd actually choose</b><p>Fresh, real ingredients. Not frozen trays.</p></div>
@@ -224,6 +232,7 @@
 
 <!-- SECTION 7 — BONUS TILES (categories, not exact items) -->
 <section class="sec"><div class="lpwrap">
+  <h2 class="qh">What comes in my first four orders?</h2>
   <div class="tiles">
     <div class="tile"><img src="images/lp-tile-sauce.jpg" alt="A bottle of Firecracker Strong Sauce"><div class="lbl">A sauce</div></div>
     <div class="tile"><img src="images/lp-tile-snack.jpg" alt="An SK Snack"><div class="lbl">A snack</div></div>
@@ -236,8 +245,9 @@
 <section class="final"><div class="lpwrap">
   <h2>Get back eight hours a week and eat better than ever.</h2>
   <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>Start my first order</a>
+  <p class="proofline"><span class="stars">★★★★★</span> <b>4.9</b> from 124+ Google reviews
+  &middot; we&rsquo;ll replace any meal you don&rsquo;t love</p>
   <p class="undercta">No subscription, cancel or skip anytime.</p>
-  <p class="undercta proofline">★★★★★ 4.9 from 124+ Google reviews &middot; we&rsquo;ll replace any meal you don&rsquo;t love</p>
   <p class="restate">Your first four orders each come with a free bonus — a sauce, a snack, a meal,
   and one we won't spoil. Added automatically, nothing to enter.</p>
 </div></section>
