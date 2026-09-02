@@ -58,6 +58,18 @@
     .bbnote{font-size:.86rem;margin-top:9px}
   }
   .hero .art img{max-height:300px;object-fit:cover}
+  @media (min-width:821px){
+    /* desktop: zip+email share a row and the card head tightens, so the button
+       clears a 760px fold (small laptops) — measured 9/2: was 846px, email 785px */
+    .card .form{display:grid;grid-template-columns:1fr 1fr;column-gap:10px;padding-top:8px}
+    .card .form label[for=zip]{grid-area:1/1} .card .form #zip{grid-area:2/1}
+    .card .form label[for=email]{grid-area:1/2} .card .form #email{grid-area:2/2}
+    .card .form button,.card .form .fine,.card .form .msg,.card .form .hp{grid-column:1/-1}
+    .card .form label span{display:none}
+    .card .head{padding:14px 20px 12px}
+    .card .head .pill{margin-top:6px}
+    .hero{padding-top:28px}
+  }
   @media (max-width:820px){
     .hero{padding-top:26px}
     /* zip and email share a row so the button clears the fold */
