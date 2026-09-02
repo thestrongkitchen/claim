@@ -81,6 +81,22 @@
   .final .restate{font-size:1.06rem;color:#c8cfbb;line-height:1.55;margin-top:18px}
   .final .undercta{color:#b8c0a8}
   .final .cta{margin-top:4px}
+
+  /* images — four places only, per the brief */
+  .heroimg{width:100%;height:auto;border-radius:14px;margin-top:30px;display:block}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  .split img{width:100%;height:100%;max-height:340px;object-fit:cover;border-radius:14px;display:block}
+  .split.proof{grid-template-columns:.72fr 1fr}
+  .split.proof img{max-height:400px;object-position:center 20%}
+  @media(max-width:640px){
+    .split{grid-template-columns:1fr;gap:20px}
+    .split img{max-height:240px}
+    .split.proof img{max-height:280px}
+  }
+  .tile img{width:100%;height:74px;object-fit:cover;border-radius:8px;margin-bottom:9px;display:block}
+  .tile .qmark{height:74px;border-radius:8px;margin-bottom:9px;background:var(--cream);color:var(--gold-d);
+               font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;font-size:1.7rem;
+               display:flex;align-items:center;justify-content:center}
 </style>
 </head>
 <body>
@@ -93,11 +109,10 @@
 <!-- SECTION 1 — HERO -->
 <section class="hero-lp"><div class="lpwrap">
   <h1>Get back eight hours a week and still eat well.</h1>
-  <p class="sub">Fresh meals, made and delivered. Join SK Insider and your first four orders each come
-  with a free bonus.</p>
+  <p class="sub">Fresh meals, made and delivered. Your first four orders each come with a free bonus.</p>
   <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>Start my first order</a>
   <p class="undercta">No subscription, cancel or skip anytime.</p>
-  <!-- IMAGE SLOT 1: food, close and appetising. No people. Full span, sits here. -->
+  <img class="heroimg" src="images/lp-hero-food.jpg" alt="A Strong Kitchen meal, plated" width="1300" height="867">
 </div></section>
 
 <!-- SECTION 2 — PROBLEM (no image, by the brief) -->
@@ -109,34 +124,36 @@
 
 <!-- SECTION 3 — SOLUTION -->
 <section class="sec"><div class="lpwrap">
-  <div class="say">
-    <p>SK Insider is that plan. Real meals, made fresh and delivered to you, ready when you are.
-    No shopping, no prep, no cleanup.</p>
-    <p class="quiet">You open the fridge at noon and lunch is already handled.</p>
+  <div class="split">
+    <div class="say">
+      <p>This is that plan. Real meals, made fresh and delivered to you, ready when you are.
+      No shopping, no prep, no cleanup.</p>
+      <p class="quiet">You open the fridge at noon and lunch is already handled.</p>
+    </div>
+    <img src="images/lp-fridge.jpg" alt="Taking a Strong Kitchen meal out of the fridge" width="767" height="1150">
   </div>
-  <!-- IMAGE SLOT 2: containers in a real fridge. Two column, image RIGHT. -->
 </div></section>
 
 <!-- SECTION 4 — PROOF -->
 <section class="sec"><div class="lpwrap">
-  <!-- IMAGE SLOT 3: a real customer's face. Two column, image LEFT. -->
-  <div class="quotes">
+  <div class="split proof">
+    <img src="images/lp-proof-josh.jpg" alt="Josh Zelem, a Strong Kitchen customer" width="480" height="853">
+    <div class="quotes">
     <div class="qt">
       <p>"Strong Kitchen made my life so easy. Delicious fresh food at a very reasonable price. Since
       I no longer order the usual take out food, I'm saving money and losing weight!"</p>
       <div class="who">— Dena Dennis Klos</div>
     </div>
     <div class="qt">
-      <p>"I've been using food delivery services consistently for over 12 years. I knew very quickly
-      that TSK set themselves apart from the rest… What stands out MOST is their exceptional food
-      quality and chef inspired meals."</p>
-      <div class="who">— Marc</div>
+      <p>"Take one thing off of my plate."</p>
+      <div class="who">— Josh Zelem</div>
     </div>
     <div class="qt">
-      <p>"The prepared meals help to give me time back in my schedule and meet my nutrition goals.
-      I've tried other meal services before and felt that I was sacrificing flavor for healthy meals.
-      That is NOT the case with TSK."</p>
-      <div class="who">— Xan</div>
+      <p>"My husband works 2nd shift so once I rush out of work I pick up our 4 year old and like to
+      spend my time with her. These meals surpassed services like Plated and Home Chef because I don't
+      have to spend 45 min in prep."</p>
+      <div class="who">— Jean G.</div>
+    </div>
     </div>
   </div>
 </div></section>
@@ -185,11 +202,10 @@
 <!-- SECTION 7 — BONUS TILES (categories, not exact items) -->
 <section class="sec"><div class="lpwrap">
   <div class="tiles">
-    <!-- IMAGE SLOT 4a-d: four thumbnails, one per tile -->
-    <div class="tile"><div class="lbl">A sauce</div></div>
-    <div class="tile"><div class="lbl">A snack</div></div>
-    <div class="tile"><div class="lbl">A meal</div></div>
-    <div class="tile"><div class="lbl">A surprise</div></div>
+    <div class="tile"><img src="images/lp-tile-sauce.jpg" alt="A bottle of Firecracker Strong Sauce"><div class="lbl">A sauce</div></div>
+    <div class="tile"><img src="images/lp-tile-snack.jpg" alt="An SK Snack"><div class="lbl">A snack</div></div>
+    <div class="tile"><img src="images/lp-tile-meal.jpg" alt="A Strong Kitchen meal"><div class="lbl">A meal</div></div>
+    <div class="tile"><div class="qmark">?</div><div class="lbl">A surprise</div></div>
   </div>
 </div></section>
 
