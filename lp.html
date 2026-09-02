@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Back Eight Hours a Week — The Strong Kitchen</title>
+<meta name="description" content="Fresh meals, made and delivered across Connecticut. Your first four orders each come with a free bonus. No subscription, cancel or skip anytime.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://claim.thestrongkitchen.com/lp.html">
+<link rel="icon" href="images/logo-text.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* SK Insider landing page — built to the 8/31 brief.
+     Single centred column. Sections in the brief's order, nothing invented.
+     STAGE 1: copy only, no images. Image slots are marked in the HTML. */
+
+  :root{ --col: 680px; }
+
+  body{background:var(--bg)}
+  .lpwrap{max-width:var(--col);margin:0 auto;padding:0 22px}
+
+  .sec{padding:52px 0}
+  .sec + .sec{border-top:1px solid var(--line)}
+
+  /* ---- hero ---- */
+  .hero-lp{padding:44px 0 48px}
+  .hero-lp h1{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;
+              font-size:clamp(2.1rem,5.4vw,3.05rem);line-height:1.1;letter-spacing:-.02em;
+              color:var(--forest);margin-bottom:16px}
+  .hero-lp .sub{font-size:1.16rem;line-height:1.55;color:var(--ink2);margin-bottom:26px}
+  .cta{display:block;width:100%;text-align:center;background:var(--green);color:#fff !important;
+       font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;font-size:1.18rem;
+       text-decoration:none;border-radius:10px;padding:19px 26px;
+       box-shadow:0 4px 16px rgba(115,147,60,.28)}
+  .cta:hover{background:var(--green-d)}
+  .undercta{font-size:.95rem;color:var(--ink2);text-align:center;margin-top:11px}
+
+  /* ---- problem / solution ---- */
+  .say{font-size:1.24rem;line-height:1.6;color:var(--forest)}
+  .say p + p{margin-top:16px}
+  .say .quiet{color:var(--ink2)}
+
+  /* ---- proof ---- */
+  .quotes{display:grid;gap:16px;margin-top:8px}
+  .qt{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .qt p{font-size:1.04rem;line-height:1.55;color:var(--ink)}
+  .qt .who{font-size:.92rem;color:var(--ink2);font-weight:600;margin-top:11px}
+
+  /* ---- benefits ---- */
+  .bens{display:grid;gap:24px;margin-top:6px}
+  .ben b{display:block;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.24rem;
+         color:var(--forest);margin-bottom:4px}
+  .ben p{font-size:1.06rem;color:var(--ink2);line-height:1.5}
+
+  /* ---- faq ---- */
+  .qa{display:grid;gap:18px;margin-top:6px}
+  .qa .q b{display:block;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.1rem;
+           color:var(--forest);margin-bottom:5px}
+  .qa .q p{font-size:1.03rem;color:var(--ink2);line-height:1.5}
+  .zipbox{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+  .zipbox input{flex:1;min-width:140px;font:inherit;font-size:1.02rem;padding:12px 14px;
+                border:1px solid var(--line);border-radius:8px}
+  .zipbox button{font:inherit;font-weight:700;font-family:"Plus Jakarta Sans",Inter,sans-serif;
+                 background:var(--green);color:#fff;border:0;border-radius:8px;padding:12px 22px;cursor:pointer}
+  #zipout{margin-top:11px;font-size:1.02rem;font-weight:600;color:var(--forest);min-height:1.3em}
+  #zipout.no{color:var(--ink2);font-weight:400}
+
+  /* ---- bonus tiles ---- */
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 10px;text-align:center}
+  .tile .lbl{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:.97rem;color:var(--forest);line-height:1.2}
+  @media(max-width:620px){ .tiles{grid-template-columns:1fr 1fr} }
+
+  /* ---- final ---- */
+  .final{background:var(--forest);color:#fff;padding:52px 0}
+  .final h2{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;
+            font-size:clamp(1.8rem,4.6vw,2.5rem);line-height:1.12;color:#fff;margin-bottom:20px}
+  .final .restate{font-size:1.06rem;color:#c8cfbb;line-height:1.55;margin-top:18px}
+  .final .undercta{color:#b8c0a8}
+  .final .cta{margin-top:4px}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="lpwrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+  <a href="https://thestrongkitchen.com" data-carry><img src="images/logo-text.png" alt="The Strong Kitchen"></a>
+  <span class="tag">Cooked in Hamden, CT</span>
+</div></header>
+
+<!-- SECTION 1 — HERO -->
+<section class="hero-lp"><div class="lpwrap">
+  <h1>Get back eight hours a week and still eat well.</h1>
+  <p class="sub">Fresh meals, made and delivered. Join SK Insider and your first four orders each come
+  with a free bonus.</p>
+  <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>Start my first order</a>
+  <p class="undercta">No subscription, cancel or skip anytime.</p>
+  <!-- IMAGE SLOT 1: food, close and appetising. No people. Full span, sits here. -->
+</div></section>
+
+<!-- SECTION 2 — PROBLEM (no image, by the brief) -->
+<section class="sec"><div class="lpwrap say">
+  <p>It's noon, you've got thirty minutes, and there's nothing in the fridge. So it's the drive-thru
+  again, or you skip it entirely.</p>
+  <p class="quiet">It's not a willpower problem. You just never had a plan.</p>
+</div></section>
+
+<!-- SECTION 3 — SOLUTION -->
+<section class="sec"><div class="lpwrap">
+  <div class="say">
+    <p>SK Insider is that plan. Real meals, made fresh and delivered to you, ready when you are.
+    No shopping, no prep, no cleanup.</p>
+    <p class="quiet">You open the fridge at noon and lunch is already handled.</p>
+  </div>
+  <!-- IMAGE SLOT 2: containers in a real fridge. Two column, image RIGHT. -->
+</div></section>
+
+<!-- SECTION 4 — PROOF -->
+<section class="sec"><div class="lpwrap">
+  <!-- IMAGE SLOT 3: a real customer's face. Two column, image LEFT. -->
+  <div class="quotes">
+    <div class="qt">
+      <p>"Strong Kitchen made my life so easy. Delicious fresh food at a very reasonable price. Since
+      I no longer order the usual take out food, I'm saving money and losing weight!"</p>
+      <div class="who">— Dena Dennis Klos</div>
+    </div>
+    <div class="qt">
+      <p>"I've been using food delivery services consistently for over 12 years. I knew very quickly
+      that TSK set themselves apart from the rest… What stands out MOST is their exceptional food
+      quality and chef inspired meals."</p>
+      <div class="who">— Marc</div>
+    </div>
+    <div class="qt">
+      <p>"The prepared meals help to give me time back in my schedule and meet my nutrition goals.
+      I've tried other meal services before and felt that I was sacrificing flavor for healthy meals.
+      That is NOT the case with TSK."</p>
+      <div class="who">— Xan</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SECTION 5 — BENEFITS (text only, by the brief) -->
+<section class="sec"><div class="lpwrap">
+  <div class="bens">
+    <div class="ben"><b>Ready when you are</b><p>No cooking, no cleanup.</p></div>
+    <div class="ben"><b>Food you'd actually choose</b><p>Fresh, real ingredients. Not frozen trays.</p></div>
+    <div class="ben"><b>One less decision a day</b><p>Lunch is already answered.</p></div>
+    <div class="ben"><b>You're spending the money either way</b>
+      <p>The difference is whether lunch works for you or against you.</p></div>
+  </div>
+</div></section>
+
+<!-- SECTION 6 — FAQ (no image, by the brief). ZIP search lives here, low on the page. -->
+<section class="sec"><div class="lpwrap">
+  <div class="qa">
+    <div class="q"><b>Do I have to sign up for a subscription?</b>
+      <p>No. Order when you want it and skip when you don't — there's nothing to cancel and no minimum.</p></div>
+
+    <div class="q"><b>Do you deliver to me?</b>
+      <p>We deliver to 103 Connecticut towns across New Haven, Hartford and Fairfield counties and
+      beyond. Put your zip in and we'll tell you straight away.</p>
+      <div class="zipbox">
+        <input id="zip" type="text" inputmode="numeric" maxlength="5" placeholder="Your zip code" aria-label="Zip code">
+        <button id="zipgo" type="button">Check</button>
+      </div>
+      <p id="zipout" aria-live="polite"></p>
+    </div>
+
+    <div class="q"><b>How does delivery work?</b>
+      <p>Order by Wednesday at midnight and your food arrives that Sunday or Monday, depending on your
+      town. You can also collect it from our kitchen on Sanford Street in Hamden.</p></div>
+
+    <div class="q"><b>How long does the food keep?</b>
+      <p>It arrives fresh, never frozen, and keeps in the fridge through the week. Heat it in about
+      three minutes in the microwave, or fifteen in the oven.</p></div>
+
+    <div class="q"><b>What if there are things I don't eat?</b>
+      <p>You pick every meal yourself from that week's menu — nothing is chosen for you. And if a meal
+      isn't for you, tell us and we'll replace it free.</p></div>
+  </div>
+</div></section>
+
+<!-- SECTION 7 — BONUS TILES (categories, not exact items) -->
+<section class="sec"><div class="lpwrap">
+  <div class="tiles">
+    <!-- IMAGE SLOT 4a-d: four thumbnails, one per tile -->
+    <div class="tile"><div class="lbl">A sauce</div></div>
+    <div class="tile"><div class="lbl">A snack</div></div>
+    <div class="tile"><div class="lbl">A meal</div></div>
+    <div class="tile"><div class="lbl">A surprise</div></div>
+  </div>
+</div></section>
+
+<!-- SECTION 8 — FINAL CTA (no image, by the brief) -->
+<section class="final"><div class="lpwrap">
+  <h2>Get back eight hours a week and still eat well.</h2>
+  <a class="cta" href="https://thestrongkitchen.com/menus" data-menu>Start my first order</a>
+  <p class="undercta">No subscription, cancel or skip anytime.</p>
+  <p class="restate">Your first four orders each come with a free bonus — a sauce, a snack, a meal,
+  and one we won't spoil. Added automatically, nothing to enter.</p>
+</div></section>
+
+<footer><div class="lpwrap">
+  <p><strong>The Strong Kitchen</strong> · 109 Sanford St Building 2, Hamden, CT 06514 ·
+     <a href="mailto:luke@thestrongkitchen.com">luke@thestrongkitchen.com</a></p>
+</div></footer>
+
+<script>
+window.TSK_LP = { campaign: 'search-insider-lp', fallbackSource: 'insider-lp', leadSource: 'insider-lp' };
+</script>
+<script>
+(function(){
+  var ZIPS = null, out = document.getElementById('zipout');
+  fetch('zips.json').then(function(r){ return r.json(); }).then(function(d){ ZIPS = d; })
+    .catch(function(){});
+  function check(){
+    var z = (document.getElementById('zip').value || '').replace(/[^0-9]/g, '').slice(0, 5);
+    if (z.length !== 5) { out.className = 'no'; out.textContent = 'Enter all five digits and we\'ll check.'; return; }
+    if (!ZIPS) { out.className = 'no'; out.textContent = 'One moment…'; return; }
+    var hit = ZIPS[z];
+    if (hit) { out.className = ''; out.textContent = '✓ Yes — we deliver to ' + hit[0] + ' on ' + hit[1] + '.'; }
+    else { out.className = 'no'; out.textContent = 'Not yet, sorry — that one is outside our delivery area for now.'; }
+  }
+  document.getElementById('zipgo').addEventListener('click', check);
+  document.getElementById('zip').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') { e.preventDefault(); check(); }
+  });
+})();
+</script>
+<script src="app.js?v=20260831"></script>
+</body>
+</html>
