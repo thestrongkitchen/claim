@@ -16,120 +16,112 @@
 <meta property="og:image:height" content="683">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="30% Off Your First Order + Free Delivery — The Strong Kitchen">
-<meta name="twitter:description" content="30% off your first order, delivered free. High quality food for high performers, cooked in Hamden, CT.">
+<meta name="twitter:description" content="30% off your first order + free delivery. High quality food for high performers, cooked in Hamden, CT.">
 <meta name="twitter:image" content="https://claim.thestrongkitchen.com/images/hero-meals.jpg">
 <link rel="icon" href="images/logo-text.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* offer card */
-.card{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:460px;box-shadow:0 6px 24px rgba(46,58,24,.08)}
-.card .head{background:var(--forest);color:#f1f4eb;padding:18px 20px 16px}
-.card .head .k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
-.card .head .nm{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.5rem;font-weight:800;line-height:1.1;margin-top:4px}
-.card .head .pr{display:flex;align-items:baseline;gap:8px;margin-top:6px}
-.card .head .pr b{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:2.2rem;font-weight:800;color:#fff;line-height:1}
-.card .head .pr span{font-size:.9rem;color:#cfd7bd}
-.card .head .pill{display:inline-block;margin-top:10px;background:var(--gold);color:#2e3a18;font-size:.75rem;font-weight:700;border-radius:999px;padding:4px 10px;letter-spacing:.04em}
-.card ul.ben{list-style:none;margin:0;padding:16px 20px 4px;display:grid;gap:8px}
-.card ul.ben li{position:relative;padding-left:26px;font-size:.95rem}
-.card ul.ben li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green-d);font-weight:700}
-.card .form{border:0;box-shadow:none;border-radius:0;padding:12px 20px 20px;max-width:none}
-.card .form .btn{margin-top:10px}
-.first{font-size:.9rem;color:var(--ink2);padding:0 20px 4px}
-.tagline{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;font-size:1.15rem;color:var(--green-d);margin:2px 0 12px;letter-spacing:.01em}
+/* v3 LIVE 9/9 (Luke): single column, phone first. Sell first, ask second. Every button scrolls to the one form.
+   Structure borrowed from the Gardenary challenge page: headline, photo with a badge, two short paragraphs,
+   button, capture band, "how it works" cards, button, "why people stay" list, quote, button, real footer. */
+.v3 .wrap{max-width:720px}
+.v3 .top .wrap{max-width:720px}
+
+/* headline */
+.intro{padding:30px 0 6px;text-align:center}
+.intro h1{font-size:clamp(2rem,7vw,2.9rem)}
+.intro .tagline{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;font-size:clamp(1.05rem,4vw,1.3rem);color:var(--green-d);margin:10px 0 0;letter-spacing:.01em}
+
+/* photo with the offer badge */
+.heroart{position:relative;margin:22px auto 0;max-width:640px}
+.heroart img{width:100%;height:auto;max-height:340px;object-fit:cover;border-radius:14px;box-shadow:0 10px 32px rgba(46,58,24,.14)}
+.badge{position:absolute;left:-6px;top:-14px;width:112px;height:112px;display:grid;place-items:center;text-align:center;
+  background:var(--gold);color:var(--forest);border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,.18);transform:rotate(-8deg);
+  font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;line-height:1.05}
+.badge b{display:block;font-size:1.9rem}
+.badge small{display:block;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;font-weight:800;margin-top:2px}
+@media (max-width:480px){.badge{width:96px;height:96px;left:-4px;top:-10px}.badge b{font-size:1.6rem}.badge small{font-size:.6rem}}
+
+/* the two paragraphs */
+.pitch{padding:22px 0 8px;text-align:center}
+.pitch p{font-size:1.08rem;color:var(--ink);max-width:34em;margin:0 auto 14px;line-height:1.55}
+.pitch p b{color:var(--forest)}
+.pitch .btn{width:auto;min-width:240px;margin-top:6px}
+
+/* capture band */
+.capture{background:var(--forest);color:#f1f4eb;padding:34px 0 36px;margin-top:26px;text-align:center;scroll-margin-top:12px}
+.capture h2{color:#fff;font-size:1.55rem;margin-bottom:6px}
+.capture .lead{color:#cfd7bd;font-size:1rem;margin:0 auto 18px;max-width:30em}
+.capture .form{margin:0 auto;max-width:460px;border:0;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.capture .form label{margin-top:8px}
+.capture .form label span{display:none}
+.capture .form .btn{margin-top:14px}
+.capture .fine{color:var(--ink2)}
+.capture .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 18px}
+.capture .pills span{font-size:.78rem;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 11px;color:#f1f4eb}
+
+/* how it works */
+.how{padding:40px 0 10px}
+.how h2,.why h2{text-align:center;font-size:1.65rem;margin-bottom:6px}
+.how .kicker,.why .kicker{text-align:center;color:var(--ink2);margin:0 auto 22px;max-width:34em}
+.steps{display:grid;gap:18px}
+.step{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.step img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.step .t{padding:16px 18px 18px}
+.step .n{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--green-d)}
+.step h3{font-size:1.25rem;margin:4px 0 6px}
+.step p{margin:0;color:var(--ink2);font-size:1rem}
+@media (min-width:640px){.steps{grid-template-columns:1fr 1fr}}
+.mid{text-align:center;padding:26px 0 8px}
+.mid .btn{width:auto;min-width:240px}
+
+/* why people stay */
+.why{padding:34px 0 10px;background:var(--cream);margin-top:26px}
+.faces{display:flex;justify-content:center;gap:14px;margin:0 0 22px}
+.faces img{width:112px;height:112px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 4px 14px rgba(46,58,24,.12)}
+@media (max-width:420px){.faces img{width:92px;height:92px}}
+.why ul{list-style:none;margin:0 auto;padding:0;max-width:34em;display:grid;gap:12px}
+.why li{position:relative;padding-left:32px;font-size:1.05rem}
+.why li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green-d);font-weight:800;font-size:1.2rem}
+.why li b{color:var(--forest)}
+.why .proofline{text-align:center;margin:22px auto 0;font-weight:600;color:var(--forest);font-size:.95rem}
+.why blockquote{margin:18px auto 0;max-width:36em;text-align:center;font-size:1.05rem}
+.why blockquote cite{display:block;font-style:normal;font-size:.88rem;color:var(--ink2);margin-top:6px}
+.why{padding-bottom:30px}
+.why blockquote{margin-top:22px}
+.stay{padding:36px 0 10px}
+.ugcrow{display:flex;justify-content:center;margin:0 0 6px;padding-left:14px}
+.ugcrow img{width:74px;height:74px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 3px 12px rgba(46,58,24,.16);margin-left:-14px;background:#eee}
+@media (max-width:420px){.ugcrow img{width:62px;height:62px;margin-left:-12px}}
+.ugccap{text-align:center;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--green-d);margin:0 0 10px}
+.stay h2{text-align:center;font-size:1.65rem;margin-bottom:6px}
+.stay .kicker{text-align:center;color:var(--ink2);margin:0 auto 22px;max-width:34em}
+.stay ul{list-style:none;margin:0 auto;padding:0;max-width:34em;display:grid;gap:12px}
+.stay li{position:relative;padding-left:32px;font-size:1.05rem}
+.stay li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green-d);font-weight:800;font-size:1.2rem}
+.stay li b{color:var(--forest)}
+.stay blockquote{margin:26px auto 0;max-width:36em;text-align:center;font-size:1.05rem}
+.stay blockquote cite{display:block;font-style:normal;font-size:.88rem;color:var(--ink2);margin-top:6px}
+.stay .mid{padding-bottom:40px}
+
+/* footer */
+.foot{background:var(--forest);color:#cfd7bd;padding:34px 0 40px;font-size:.9rem}
+.foot .cols{display:grid;gap:22px}
+@media (min-width:640px){.foot .cols{grid-template-columns:1.2fr 1fr 1fr}}
+.foot img{height:34px;width:auto;filter:brightness(0) invert(1);opacity:.95;margin-bottom:12px}
+.foot h4{color:#fff;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:.95rem;margin:0 0 8px}
+.foot a{color:#f1f4eb;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.foot p{margin:0 0 8px}
+.foot .legal{border-top:1px solid rgba(255,255,255,.14);margin-top:24px;padding-top:16px;font-size:.78rem;color:#aab598}
 </style>
 <!-- Google Tag Manager (same container as thestrongkitchen.com) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KTPCPN88');</script>
-<style>
-  /* Capture sits top-left — the eye lands left of centre — with the photo and the
-     bonus detail on the right. On a phone the form column stacks first, ahead of
-     the photo, so the ask is on the first screen. (Luke, 8/31) */
-  .bonusbar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
-  .bb{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px 5px;text-align:center}
-  .bb .n{display:block;font-size:.65rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;
-         color:var(--green-d);margin-bottom:5px}
-  .bb b{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:.9rem;color:var(--forest);line-height:1.18}
-  .bbnote{font-size:.92rem;color:var(--ink2);margin-top:11px;line-height:1.5}
-  @media(max-width:820px){
-    .bonusbar{gap:6px;margin-top:13px}
-    .bb{padding:11px 3px}
-    .bb b{font-size:.79rem}
-    .bbnote{font-size:.86rem;margin-top:9px}
-  }
-  @media (min-width:821px){
-    /* desktop: zip+email share a row and the card head tightens, so the button
-       clears a 760px fold (small laptops) — measured 9/2: was 846px, email 785px */
-    .card .form{display:grid;grid-template-columns:1fr 1fr;column-gap:10px;padding-top:8px}
-    .card .form label[for=zip]{grid-area:1/1} .card .form #zip{grid-area:2/1}
-    .card .form label[for=email]{grid-area:1/2} .card .form #email{grid-area:2/2}
-    .card .form button,.card .form .fine,.card .form .msg,.card .form .hp{grid-column:1/-1}
-    .card .form label span{display:none}
-    .card .head{padding:14px 20px 12px}
-    .card .head .pill{margin-top:6px}
-    .hero{padding-top:28px}
-  }
-  @media (max-width:820px){
-    .hero{padding-top:26px}
-    /* zip and email share a row so the button clears the fold */
-    .card .form{display:grid;grid-template-columns:1fr 1fr;column-gap:10px}
-    .card .form label[for=zip]{grid-area:1/1} .card .form #zip{grid-area:2/1}
-    .card .form label[for=email]{grid-area:1/2} .card .form #email{grid-area:2/2}
-    .card .form button,.card .form .fine,.card .form .msg,.card .form .hp{grid-column:1/-1}
-    .card .form label span{display:none}          /* the long hint eats a whole line */
-    .card .head{padding-bottom:10px}
-    .card .head .pr{font-size:.95rem}
-    .hero .sub{font-size:1rem;line-height:1.5}
-    .hero .wrap{grid-template-columns:1fr}
-    .hero .art{order:0;max-height:none;overflow:visible}
-    .hero .art img{max-height:210px;border-radius:12px}
-    /* the pill repeats the subhead's "no code, nothing to add" — drop it on phones
-       so the ask itself clears the fold */
-    .card .head .pill{display:none}
-  }
-
-  /* v2 layout (Luke 9/9): copy beside the photo, then one wide capture bar underneath; all above the fold */
-  .hero{padding:26px 0 26px}
-  .hero .wrap{align-items:center}
-  .hero .art{max-height:none;overflow:visible}
-  .heroimg{display:block;width:100%;height:auto;max-height:280px;object-fit:cover;border-radius:12px;box-shadow:0 8px 30px rgba(46,58,24,.12)}
-  .hero .wrap.capture{display:block}   /* the capture bar is not part of the two-column grid */
-  .card.wide{max-width:none;width:100%;margin-top:18px;display:grid;grid-template-columns:320px 1fr}
-  .card.wide .head{padding:18px 22px}
-  .card.wide .form{display:grid !important;grid-template-columns:1fr 1.4fr auto !important;column-gap:12px;align-items:end;padding:16px 22px 14px !important}
-  .card.wide .form label[for=zip]{grid-area:1/1} .card.wide .form #zip{grid-area:2/1}
-  .card.wide .form label[for=email]{grid-area:1/2} .card.wide .form #email{grid-area:2/2}
-  .card.wide .form button{grid-area:2/3;margin-top:0 !important;white-space:nowrap}
-  .card.wide .form .fine,.card.wide .form .msg,.card.wide .form .hp{grid-column:1/-1 !important}
-  .card.wide .form .fine{text-align:left;margin-top:8px}
-  .card.wide .form label span{display:none}
-  .card.wide .head .pill{display:inline-block !important;margin-top:8px}
-  @media (min-width:601px) and (max-width:900px){
-    .card.wide{grid-template-columns:250px 1fr}
-    .card.wide .head{padding:14px 16px}
-    .card.wide .head .nm{font-size:1.25rem}
-    .card.wide .head .pr b{font-size:1.7rem}
-    .card.wide .form{grid-template-columns:1fr 1.4fr !important;padding:12px 16px 12px !important}
-    .card.wide .form button{grid-area:auto;grid-column:1/-1;margin-top:8px !important}
-  }
-  @media (max-width:600px){
-    .card.wide{grid-template-columns:1fr}
-    .card.wide .form{grid-template-columns:1fr 1fr !important}
-    .card.wide .form button{grid-area:auto;grid-column:1/-1}
-  }
-  @media (max-width:600px){
-    .hero .wrap{grid-template-columns:1fr}
-    .hero .art{order:0}
-    .heroimg{display:none}   /* phones: keep the ask on the first screen */
-  }
-  @media (min-width:601px) and (max-width:820px){
-    .hero .wrap{grid-template-columns:1.1fr .9fr}   /* narrow desktop panes still get copy + photo side by side */
-    .hero .art{order:0}
-  }
-</style>
 </head>
-<body>
+<body class="v3">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTPCPN88" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="top"><div class="wrap">
@@ -137,58 +129,130 @@
   <span class="tag">Cooked in Hamden, CT · Delivered Sunday &amp; Monday</span>
 </div></header>
 
-<section class="hero"><div class="wrap">
-  <div>
-    <span class="eyebrow">New customers · Connecticut</span>
-    <h1>30% off your first order, delivered free</h1>
-    <p class="tagline">High quality food for high performers</p>
-    <p class="sub">Balanced meals, protein forward. When you need high quality nutrition and hours saved. Fully cooked and delivered fresh Sundays and Mondays. Put in your zip and email and we’ll send you a code that takes 30% off your first order and covers the delivery.</p>
-
+<section class="intro"><div class="wrap">
+  <span class="eyebrow">New customers · Connecticut</span>
+  <h1>30% off your first order + free delivery</h1>
+  <p class="tagline">High quality food for high performers</p>
+  <div class="heroart">
+    <img src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals next to the green delivery bag" width="1024" height="683">
+    <div class="badge" aria-hidden="true"><div><b>30%</b><small>off + free delivery</small></div></div>
   </div>
-  <div class="art"><img class="heroimg" src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals with the green delivery bag" width="1200" height="900"></div>
-</div>
-<div class="wrap capture">
-    <div class="card wide">
-      <div class="head">
-        <div class="k">New customers · one code</div>
-        <div class="nm">Your first order</div>
-        <div class="pr"><b>30%</b><span>off your first order · delivery on us</span></div>
-        <span class="pill">One code · good for 72 hours</span>
-      </div>
-      <form class="form" id="claim-form" novalidate>
-        <label for="zip">Zip code <span>— so we only send you what we actually deliver</span></label>
-        <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" placeholder="06514" required>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-        <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="btn" type="submit">Send me my code →</button>
-        <p class="fine">The code comes to your inbox in a minute or two. Then the weekly menu, every Thursday. Unsubscribe any time.</p>
-        <p class="msg" id="form-msg" role="status" aria-live="polite"></p>
-      </form>
+</div></section>
+
+<section class="pitch"><div class="wrap">
+  <p><b>Balanced meals, protein forward.</b> For the weeks when you need high quality nutrition and your hours back.</p>
+  <p>Fully cooked in our Hamden kitchen and delivered fresh on Sundays and Mondays across Connecticut. Put in your zip and email and we’ll send you a code that takes 30% off your first order and covers the delivery.</p>
+  <a class="btn" href="#claim">Get my code →</a>
+</div></section>
+
+<section class="capture" id="claim"><div class="wrap">
+  <h2>Get your code</h2>
+  <p class="lead">Enter your zip and email. The code lands in your inbox in a minute or two.</p>
+  <div class="pills"><span>NEW CUSTOMERS</span><span>ONE CODE</span><span>GOOD FOR 72 HOURS</span></div>
+  <form class="form" id="claim-form" novalidate>
+    <label for="zip">Zip code <span>— so we only send you what we actually deliver</span></label>
+    <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" placeholder="06514" required>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+    <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit">Send me my code →</button>
+    <p class="fine">Then the weekly menu, every Thursday. Unsubscribe any time.</p>
+    <p class="msg" id="form-msg" role="status" aria-live="polite"></p>
+  </form>
+</div></section>
+
+<section class="how"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="kicker">You decide once, at checkout. Dinner is handled for the week.</p>
+  <div class="steps">
+    <div class="step">
+      <img src="images/meal-pulled-chicken.jpg" alt="A plated Strong Kitchen meal with the sauce cup on the side" loading="lazy">
+      <div class="t"><span class="n">Step 1</span><h3>Pick your meals</h3>
+      <p>Nine new entrées every week. Choose Fat Loss, Performance or Protein Plus portions. Order any day; Wednesday at midnight is the cutoff.</p></div>
     </div>
+    <div class="step">
+      <img src="images/how-cook.jpg" alt="Meals being portioned into containers in the Strong Kitchen" loading="lazy">
+      <div class="t"><span class="n">Step 2</span><h3>We cook after the cutoff</h3>
+      <p>Everything made fresh. Your meals are cooked, sealed and labeled in our Hamden kitchen the same week. No preservatives, nothing frozen.</p></div>
+    </div>
+    <div class="step">
+      <img src="images/how-deliver.jpg" alt="A Strong Kitchen delivery handed over at the front door" loading="lazy">
+      <div class="t"><span class="n">Step 3</span><h3>Delivered Sunday or Monday</h3>
+      <p>Refrigerated van to your door. You don’t need to be home. Pickup in Hamden is always free.</p></div>
+    </div>
+    <div class="step">
+      <img src="images/how-heat.jpg" alt="Steak and roasted potatoes coming out of the oven on a tray" loading="lazy">
+      <div class="t"><span class="n">Step 4</span><h3>Heat and eat</h3>
+      <p>Peel the lid, take the sauce cup out, two to three minutes in the microwave or 10 minutes in the oven. Meals stay fresh for seven days. Eat them in any order.</p></div>
+    </div>
+  </div>
+  <div class="mid"><a class="btn" href="#claim">Get my code →</a></div>
 </div></section>
 
-<section class="obj"><div class="wrap narrow">
-  <h2>What stops most people — and why it won’t stop you</h2>
+<section class="why"><div class="wrap">
+  <div class="faces">
+    <img src="images/lp-proof-josh.jpg" alt="Josh, a Strong Kitchen customer" loading="lazy">
+    <img src="images/lp-fridge.jpg" alt="A customer stocking her fridge with Strong Kitchen meals" loading="lazy">
+    <img src="images/handoff.jpg" alt="A Strong Kitchen bag handed to a customer at the gym" loading="lazy">
+  </div>
+  <h2>Why people choose us</h2>
   <ul>
-    <li><em>“I’ll get locked in.”</em>No contracts, no subscription. Order the weeks you want.</li>
-    <li><em>“I won’t like it.”</em>Nine new entrées every week from a kitchen that cooks for flavor first — and if you don’t love a meal, we replace it free.</li>
-    <li><em>“I don’t have time to figure out a new service.”</em>Pick meals in under two minutes. Order any day; Wednesday midnight is the ordering deadline; Sunday or Monday it’s at your door, fully cooked. Heat and eat.</li>
+    <li><b>Calorie controlled, protein forward.</b> Every meal is portioned for you. You never open an app, you open the fridge.</li>
+    <li><b>Made fresh every week.</b> Cooked after the cutoff, never frozen, no preservatives.</li>
+    <li><b>No contract, no subscription.</b> Order what you like and join our flexible <a href="https://thestrongkitchen.com/memberships" data-carry>Membership</a> if you want to save more. Free the 1st month.</li>
+    <li><b>Don’t love a meal?</b> We replace it free.</li>
+    <li><b>Local.</b> Cooked in Hamden, delivered across New Haven, Hartford and most of Fairfield County.</li>
   </ul>
+  <p class="proofline"><span class="stars">★</span> 4.9 · 124+ Google reviews &nbsp;·&nbsp; 🏆 2× Best of New Haven, Prepared Meals</p>
+  <blockquote><span class="stars">★★★★★</span><br>“I’ve tried other meal services before and felt that I was sacrificing flavor for healthy meals. That is NOT the case with TSK. I’ve never had a disappointing meal.”<cite>— Xan, Google review</cite></blockquote>
 </div></section>
 
-<section class="proof"><div class="wrap narrow">
-  <div class="strip"><span><span class="stars">★</span> 4.9 · 124+ Google reviews</span><span>🏆 2× Best of New Haven — Prepared Meals</span><span>Featured in Backyard Road Trips</span></div>
-  <blockquote><span class="stars">★★★★★</span><br>“Our meals were delicious! It’s so convenient, super easy, and healthy — just what we needed.”<cite>— Mary S., Google review</cite></blockquote>
+<section class="stay"><div class="wrap">
+  <div class="ugcrow" aria-label="Delivery photos">
+    <img src="images/ugc-1.jpg" alt="A Strong Kitchen delivery bag at a customer’s front door" loading="lazy">
+    <img src="images/ugc-2.jpg" alt="A Strong Kitchen delivery bag on a customer’s doormat" loading="lazy">
+    <img src="images/ugc-3.jpg" alt="Three Strong Kitchen bags waiting at a customer’s door" loading="lazy">
+  </div>
+  <p class="ugccap">Real deliveries</p>
+  <h2>Why people stay</h2>
+  <p class="kicker">Come for the food, stay for the service.</p>
+  <ul>
+    <li><b>We take feedback seriously.</b> Tell us what you loved and what you didn’t. It’s YOUR food.</li>
+    <li><b>A real person answers.</b> Reply to any email and we respond same day, often within the hour.</li>
+    <li><b>No hassle when something’s off.</b> Missing item, damaged container, a meal you didn’t love: say so and we fix it. No forms, no fine print.</li>
+    <li><b>A menu that keeps moving.</b> 81 rotating menu items with ingredients you can pronounce and new flavors you’ll love.</li>
+    <li><b>You always know what’s happening.</b> Your delivery window before the order leaves the kitchen, and a heads-up from us if anything changes.</li>
+  </ul>
+  <blockquote><span class="stars">★★★★★</span><br>“Have been using Strong Kitchen for years now. Always great healthy options, and the flavors and quality have only gotten better over time. Really top notch. Would not want to live without SK!”<cite>— Thomas K., Google review</cite></blockquote>
+  <div class="mid"><a class="btn" href="#claim">Get my code →</a></div>
 </div></section>
 
-<section class="band"><div class="wrap">
-  <a class="btn inline" href="#claim-form">Send me my code →</a>
-</div></section>
-
-<footer><div class="wrap">
-  <p><strong>The Strong Kitchen</strong> · 109 Sanford St Building 2, Hamden, CT 06514 · <a href="mailto:luke@thestrongkitchen.com">luke@thestrongkitchen.com</a></p>
-  <p>New customers only. One code per customer, first order only: 30% off plus free delivery, good for 72 hours from the email. Delivery across New Haven, Hartford and most of Fairfield County — enter your zip to check. Pickup in Hamden is always free. Didn’t love a meal? We’ll replace it free. <a href="https://thestrongkitchen.com" data-carry>thestrongkitchen.com</a> · © 2026</p>
+<footer class="foot"><div class="wrap">
+  <div class="cols">
+    <div>
+      <img src="images/logo-text.png" alt="The Strong Kitchen">
+      <p>Fresh, chef-made meal prep. High quality food for high performers.</p>
+      <p>109 Sanford St Building 2<br>Hamden, CT 06514</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="https://thestrongkitchen.com/menus" data-carry>This week’s menu</a></li>
+        <li><a href="https://thestrongkitchen.com/where-we-deliver" data-carry>Where we deliver</a></li>
+        <li><a href="https://thestrongkitchen.com/blog" data-carry>Blog</a></li>
+        <li><a href="https://thestrongkitchen.com" data-carry>thestrongkitchen.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Talk to us</h4>
+      <ul>
+        <li><a href="mailto:luke@thestrongkitchen.com">luke@thestrongkitchen.com</a></li>
+        <li><a href="https://www.instagram.com/thestrongkitchen/">Instagram</a></li>
+        <li><a href="https://www.facebook.com/thestrongkitchen/">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="legal">New customers only. One code per customer, first order only: 30% off plus free delivery, good for 72 hours from the email. Delivery across New Haven, Hartford and most of Fairfield County; enter your zip to check. Pickup in Hamden is always free. Didn’t love a meal? We’ll replace it free. © 2026 Strong Kitchen LLC</p>
 </div></footer>
 
 <script src="app.js?v=20260909"></script>
