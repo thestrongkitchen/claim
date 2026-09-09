@@ -4,7 +4,7 @@
 */
 (function () {
   var KLAVIYO_COMPANY = 'RHx7TH';          // public key
-  var KLAVIYO_LIST = 'Tg6vZf';             // "First-Month Bonuses — Signups" (triggers the nurture flow)
+  var KLAVIYO_LIST = 'Tg6vZf';             // "First-Order Discount - Signups" (in the SK Start audience segment → Warm Prospects flow deals the code)
   var MENU_URL = 'https://thestrongkitchen.com/menus';
 
   // ---- attribution carry-over -------------------------------------------
@@ -46,12 +46,21 @@
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return show('err', 'That email doesn’t look right — give it another look.');
     if (zip.length !== 5) return show('err', 'Enter your 5-digit zip so we only send you what we actually deliver.');
     var isCT = zip.indexOf('06') === 0;
+    if (!isCT) {
+      // Connecticut only (Luke 9/9): outside CT we don't subscribe and no code goes out — just the polite page.
+      try { if (window.dataLayer) window.dataLayer.push({ event: 'lead_outside_ct', lead_zip: zip }); } catch (e) {}
+      var off = new URL(LP.thanksPage || 'thanks.html', location.href);
+      off.searchParams.set('ct', '0');
+      Object.keys(carry).forEach(function (k) { off.searchParams.set(k, carry[k]); });
+      location.href = off.toString();
+      return;
+    }
 
-    var props = { zip_code: zip, is_connecticut: isCT, lead_source: LP.leadSource || 'first-month-bonuses-lp', signup_page: location.pathname, sk_insider_claim: true };
+    var props = { zip_code: zip, is_connecticut: isCT, lead_source: LP.leadSource || 'first-order-code-lp', signup_page: location.pathname, first_order_code: true };
     Object.keys(carry).forEach(function (k) { props[k] = carry[k]; });
 
     var body = { data: { type: 'subscription', attributes: {
-      custom_source: 'First-Month Bonuses LP',
+      custom_source: 'First-Order Discount LP',
       profile: { data: { type: 'profile', attributes: {
         email: email,
         first_name: first || undefined,
