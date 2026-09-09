@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30% Off Your First Order + Free Delivery — The Strong Kitchen, Hamden CT</title>
+<meta name="description" content="30% off your first order and free delivery with one code. Fully cooked, high-protein meals from The Strong Kitchen in Hamden, delivered Sunday and Monday across Connecticut.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://claim.thestrongkitchen.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://claim.thestrongkitchen.com/">
+<meta property="og:site_name" content="The Strong Kitchen">
+<meta property="og:title" content="30% Off Your First Order + Free Delivery — The Strong Kitchen">
+<meta property="og:description" content="One code takes 30% off your first order and covers delivery. Fully cooked meals from Hamden, at your door Sunday or Monday.">
+<meta property="og:image" content="https://claim.thestrongkitchen.com/images/hero-meals.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="683">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="30% Off Your First Order + Free Delivery — The Strong Kitchen">
+<meta name="twitter:description" content="30% off your first order + free delivery. High quality food for high performers, cooked in Hamden, CT.">
+<meta name="twitter:image" content="https://claim.thestrongkitchen.com/images/hero-meals.jpg">
+<link rel="icon" href="images/logo-text.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* v3 (Luke 9/9): single column, phone first. Sell first, ask second. Every button scrolls to the one form.
+   Structure borrowed from the Gardenary challenge page: headline, photo with a badge, two short paragraphs,
+   button, capture band, "how it works" cards, button, "why people stay" list, quote, button, real footer. */
+.v3 .wrap{max-width:720px}
+.v3 .top .wrap{max-width:720px}
+
+/* headline */
+.intro{padding:30px 0 6px;text-align:center}
+.intro h1{font-size:clamp(2rem,7vw,2.9rem)}
+.intro .tagline{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;font-size:clamp(1.05rem,4vw,1.3rem);color:var(--green-d);margin:10px 0 0;letter-spacing:.01em}
+
+/* photo with the offer badge */
+.heroart{position:relative;margin:22px auto 0;max-width:640px}
+.heroart img{width:100%;height:auto;max-height:340px;object-fit:cover;border-radius:14px;box-shadow:0 10px 32px rgba(46,58,24,.14)}
+.badge{position:absolute;left:-6px;top:-14px;width:112px;height:112px;display:grid;place-items:center;text-align:center;
+  background:var(--gold);color:var(--forest);border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,.18);transform:rotate(-8deg);
+  font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;line-height:1.05}
+.badge b{display:block;font-size:1.9rem}
+.badge small{display:block;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;font-weight:800;margin-top:2px}
+@media (max-width:480px){.badge{width:96px;height:96px;left:-4px;top:-10px}.badge b{font-size:1.6rem}.badge small{font-size:.6rem}}
+
+/* the two paragraphs */
+.pitch{padding:22px 0 8px;text-align:center}
+.pitch p{font-size:1.08rem;color:var(--ink);max-width:34em;margin:0 auto 14px;line-height:1.55}
+.pitch p b{color:var(--forest)}
+.pitch .btn{width:auto;min-width:240px;margin-top:6px}
+
+/* capture band */
+.capture{background:var(--forest);color:#f1f4eb;padding:34px 0 36px;margin-top:26px;text-align:center;scroll-margin-top:12px}
+.capture h2{color:#fff;font-size:1.55rem;margin-bottom:6px}
+.capture .lead{color:#cfd7bd;font-size:1rem;margin:0 auto 18px;max-width:30em}
+.capture .form{margin:0 auto;max-width:460px;border:0;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.capture .form label{margin-top:8px}
+.capture .form label span{display:none}
+.capture .form .btn{margin-top:14px}
+.capture .fine{color:var(--ink2)}
+.capture .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 18px}
+.capture .pills span{font-size:.78rem;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 11px;color:#f1f4eb}
+
+/* how it works */
+.how{padding:40px 0 10px}
+.how h2,.why h2{text-align:center;font-size:1.65rem;margin-bottom:6px}
+.how .kicker,.why .kicker{text-align:center;color:var(--ink2);margin:0 auto 22px;max-width:34em}
+.steps{display:grid;gap:18px}
+.step{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.step img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.step .t{padding:16px 18px 18px}
+.step .n{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--green-d)}
+.step h3{font-size:1.25rem;margin:4px 0 6px}
+.step p{margin:0;color:var(--ink2);font-size:1rem}
+@media (min-width:640px){.steps{grid-template-columns:1fr 1fr}}
+.mid{text-align:center;padding:26px 0 8px}
+.mid .btn{width:auto;min-width:240px}
+
+/* why people stay */
+.why{padding:34px 0 10px;background:var(--cream);margin-top:26px}
+.faces{display:flex;justify-content:center;gap:14px;margin:0 0 22px}
+.faces img{width:112px;height:112px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 4px 14px rgba(46,58,24,.12)}
+@media (max-width:420px){.faces img{width:92px;height:92px}}
+.why ul{list-style:none;margin:0 auto;padding:0;max-width:34em;display:grid;gap:12px}
+.why li{position:relative;padding-left:32px;font-size:1.05rem}
+.why li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green-d);font-weight:800;font-size:1.2rem}
+.why li b{color:var(--forest)}
+.why .proofline{text-align:center;margin:22px auto 0;font-weight:600;color:var(--forest);font-size:.95rem}
+.why blockquote{margin:18px auto 0;max-width:36em;text-align:center;font-size:1.05rem}
+.why blockquote cite{display:block;font-style:normal;font-size:.88rem;color:var(--ink2);margin-top:6px}
+.why .mid{padding-bottom:36px}
+
+/* footer */
+.foot{background:var(--forest);color:#cfd7bd;padding:34px 0 40px;font-size:.9rem}
+.foot .cols{display:grid;gap:22px}
+@media (min-width:640px){.foot .cols{grid-template-columns:1.2fr 1fr 1fr}}
+.foot img{height:34px;width:auto;filter:brightness(0) invert(1);opacity:.95;margin-bottom:12px}
+.foot h4{color:#fff;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:.95rem;margin:0 0 8px}
+.foot a{color:#f1f4eb;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.foot p{margin:0 0 8px}
+.foot .legal{border-top:1px solid rgba(255,255,255,.14);margin-top:24px;padding-top:16px;font-size:.78rem;color:#aab598}
+</style>
+<!-- Google Tag Manager (same container as thestrongkitchen.com) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KTPCPN88');</script>
+</head>
+<body class="v3">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTPCPN88" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header class="top"><div class="wrap">
+  <a href="https://thestrongkitchen.com" data-carry><img src="images/logo-text.png" alt="The Strong Kitchen"></a>
+  <span class="tag">Cooked in Hamden, CT · Delivered Sunday &amp; Monday</span>
+</div></header>
+
+<section class="intro"><div class="wrap">
+  <span class="eyebrow">New customers · Connecticut</span>
+  <h1>30% off your first order + free delivery</h1>
+  <p class="tagline">High quality food for high performers</p>
+  <div class="heroart">
+    <img src="images/hero-meals.jpg" alt="A week of Strong Kitchen meals next to the green delivery bag" width="1024" height="683">
+    <div class="badge" aria-hidden="true"><div><b>30%</b><small>off + free delivery</small></div></div>
+  </div>
+</div></section>
+
+<section class="pitch"><div class="wrap">
+  <p><b>Balanced meals, protein forward.</b> For the weeks when you need high quality nutrition and your hours back.</p>
+  <p>Fully cooked in our Hamden kitchen and delivered fresh on Sundays and Mondays across Connecticut. Put in your zip and email and we’ll send you a code that takes 30% off your first order and covers the delivery.</p>
+  <a class="btn" href="#claim">Get my code →</a>
+</div></section>
+
+<section class="capture" id="claim"><div class="wrap">
+  <h2>Get your code</h2>
+  <p class="lead">Enter your zip and email. The code lands in your inbox in a minute or two.</p>
+  <div class="pills"><span>NEW CUSTOMERS</span><span>ONE CODE</span><span>GOOD FOR 72 HOURS</span></div>
+  <form class="form" id="claim-form" novalidate>
+    <label for="zip">Zip code <span>— so we only send you what we actually deliver</span></label>
+    <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" placeholder="06514" required>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+    <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit">Send me my code →</button>
+    <p class="fine">Then the weekly menu, every Thursday. Unsubscribe any time.</p>
+    <p class="msg" id="form-msg" role="status" aria-live="polite"></p>
+  </form>
+</div></section>
+
+<section class="how"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="kicker">You decide once, at checkout. Dinner is handled for the week.</p>
+  <div class="steps">
+    <div class="step">
+      <img src="images/meal-pulled-chicken.jpg" alt="A plated Strong Kitchen meal with the sauce cup on the side" loading="lazy">
+      <div class="t"><span class="n">Step 1</span><h3>Pick your meals</h3>
+      <p>Nine new entrées every week. Choose Fat Loss, Performance or Protein Plus portions. Order any day; Wednesday at midnight is the cutoff.</p></div>
+    </div>
+    <div class="step">
+      <img src="images/how-cook.jpg" alt="Meals being portioned into containers in the Strong Kitchen" loading="lazy">
+      <div class="t"><span class="n">Step 2</span><h3>We cook after the cutoff</h3>
+      <p>Nothing sits around. Your meals are cooked, sealed and labeled in our Hamden kitchen the same week. No preservatives, nothing frozen.</p></div>
+    </div>
+    <div class="step">
+      <img src="images/doorstep.jpg" alt="A customer at her front door with the green Strong Kitchen bag" loading="lazy">
+      <div class="t"><span class="n">Step 3</span><h3>Delivered Sunday or Monday</h3>
+      <p>Refrigerated van to your door. You don’t need to be home. Pickup in Hamden is always free.</p></div>
+    </div>
+    <div class="step">
+      <img src="images/how-heat.jpg" alt="Steak and roasted potatoes coming out of the oven on a tray" loading="lazy">
+      <div class="t"><span class="n">Step 4</span><h3>Heat and eat</h3>
+      <p>Peel the lid, take the sauce cup out, two to three minutes in the microwave. Meals stay fresh for seven days. Eat them in any order.</p></div>
+    </div>
+  </div>
+  <div class="mid"><a class="btn" href="#claim">Get my code →</a></div>
+</div></section>
+
+<section class="why"><div class="wrap">
+  <div class="faces">
+    <img src="images/lp-proof-josh.jpg" alt="Josh, a Strong Kitchen customer" loading="lazy">
+    <img src="images/lp-fridge.jpg" alt="A customer stocking her fridge with Strong Kitchen meals" loading="lazy">
+    <img src="images/handoff.jpg" alt="A Strong Kitchen bag handed to a customer at the gym" loading="lazy">
+  </div>
+  <h2>Why people stay</h2>
+  <ul>
+    <li><b>Calorie controlled, protein forward.</b> Every meal is portioned for you. You never open an app, you open the fridge.</li>
+    <li><b>Made fresh every week.</b> Cooked after the cutoff, never frozen, no preservatives.</li>
+    <li><b>No contract, no subscription.</b> Order the weeks you want.</li>
+    <li><b>Don’t love a meal?</b> We replace it free.</li>
+    <li><b>Local.</b> Cooked in Hamden, delivered across New Haven, Hartford and most of Fairfield County.</li>
+  </ul>
+  <p class="proofline"><span class="stars">★</span> 4.9 · 124+ Google reviews &nbsp;·&nbsp; 🏆 2× Best of New Haven, Prepared Meals</p>
+  <blockquote><span class="stars">★★★★★</span><br>“Our meals were delicious! It’s so convenient, super easy, and healthy — just what we needed.”<cite>— Mary S., Google review</cite></blockquote>
+  <div class="mid"><a class="btn" href="#claim">Get my code →</a></div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <div class="cols">
+    <div>
+      <img src="images/logo-text.png" alt="The Strong Kitchen">
+      <p>Fresh, chef-made meal prep. High quality food for high performers.</p>
+      <p>109 Sanford St Building 2<br>Hamden, CT 06514</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="https://thestrongkitchen.com/menus" data-carry>This week’s menu</a></li>
+        <li><a href="https://thestrongkitchen.com/where-we-deliver" data-carry>Where we deliver</a></li>
+        <li><a href="https://thestrongkitchen.com/blog" data-carry>Blog</a></li>
+        <li><a href="https://thestrongkitchen.com" data-carry>thestrongkitchen.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Talk to us</h4>
+      <ul>
+        <li><a href="mailto:luke@thestrongkitchen.com">luke@thestrongkitchen.com</a></li>
+        <li><a href="https://www.instagram.com/thestrongkitchen/">Instagram</a></li>
+        <li><a href="https://www.facebook.com/thestrongkitchen/">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="legal">New customers only. One code per customer, first order only: 30% off plus free delivery, good for 72 hours from the email. Delivery across New Haven, Hartford and most of Fairfield County; enter your zip to check. Pickup in Hamden is always free. Didn’t love a meal? We’ll replace it free. © 2026 Strong Kitchen LLC</p>
+</div></footer>
+
+<script src="app.js?v=20260909"></script>
+</body>
+</html>
