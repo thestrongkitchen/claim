@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your code is on its way — The Strong Kitchen</title>
+<title>Here’s your code — The Strong Kitchen</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="images/logo-text.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +44,15 @@
     .boxes .tile b{font-size:.8rem}
   }
 </style>
+<style>
+  /* code box (9/13): the code is shown here so people can order now; the email is the backup copy */
+  .codebox{background:var(--forest);color:#f1f4eb;border-radius:12px;padding:16px 18px;margin:14px 0 16px;max-width:460px}
+  .codebox .k{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+  .codebox .row{display:flex;align-items:center;gap:10px;margin:8px 0 6px}
+  .codebox code{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.9rem;font-weight:800;letter-spacing:.06em;color:#fff}
+  .codebox button{font:inherit;font-weight:700;font-size:.85rem;background:var(--gold);color:var(--forest);border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+  .codebox .k2{display:block;font-size:.9rem;color:#cfd7bd}
+</style>
 </head>
 <body class="thanks">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTPCPN88" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -56,11 +65,16 @@
 <!-- Connecticut -->
 <section class="hero" id="ct"><div class="wrap">
   <div>
-    <span class="eyebrow" id="eb">Check your inbox</span>
-    <h1 id="h1ct">Your code is on its way<span id="hi"></span>.</h1>
-    <p class="sub">It comes from luke@thestrongkitchen.com within a couple of minutes. Not there? Check spam or promotions, then reply to any of our emails and we’ll send it again. While you wait:</p>
-    <a class="btn inline" href="https://thestrongkitchen.com/menus" data-menu>See this week’s menu →</a>
-    <p class="fine" style="text-align:left">The code is good for 72 hours. Orders in by Wednesday midnight arrive Sunday or Monday.</p>
+    <span class="eyebrow" id="eb">You’re in</span>
+    <h1 id="h1ct">Here’s your code<span id="hi"></span>.</h1>
+    <div class="codebox" id="codebox">
+      <span class="k">30% off your first order + free delivery</span>
+      <div class="row"><code id="thecode">STRESSFREE</code><button type="button" id="copybtn" onclick="(function(){try{navigator.clipboard.writeText('STRESSFREE');document.getElementById('copybtn').textContent='Copied';}catch(e){}})()">Copy</button></div>
+      <span class="k2">Enter it at checkout. Good for 72 hours.</span>
+    </div>
+    <a class="btn inline" href="https://thestrongkitchen.com/menus" data-menu>Pick my meals →</a>
+    <p class="sub" style="margin-top:14px">We also sent it to your inbox from luke@thestrongkitchen.com, so it’s there when you need it. Not there in a few minutes? Check spam or promotions.</p>
+    <p class="fine" style="text-align:left">Orders in by Wednesday midnight arrive Sunday or Monday.</p>
   </div>
   <div class="art"><img src="images/handoff.jpg" alt="Luke handing over a Strong Kitchen bag" width="1024" height="683"></div>
 </div></section>
@@ -68,11 +82,11 @@
 <section class="boxes" id="ct-boxes"><div class="wrap">
   <h2>How to use your code</h2>
   <div class="tiles" style="grid-template-columns:repeat(3,1fr) !important">
-    <div class="tile"><span class="n">Step 1</span><b>Open the email,<br>copy the code</b></div>
+    <div class="tile"><span class="n">Step 1</span><b>Copy the code<br>above</b></div>
     <div class="tile"><span class="n">Step 2</span><b>Pick your meals<br>from this week’s menu</b></div>
     <div class="tile"><span class="n">Step 3</span><b>Enter it at checkout:<br>30% off, $0 delivery</b></div>
   </div>
-  <p class="note">One code, your first order only, good for 72 hours from the email. Pickup in Hamden is always free.</p>
+  <p class="note">One code, your first order only, good for 72 hours. Pickup in Hamden is always free.</p>
 </div></section>
 
 <section class="how-after"><div class="wrap narrow">
