@@ -39,7 +39,7 @@
 
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    if (form.website && form.website.value) return;            // honeypot
+    if (form.sk_extra_field && form.sk_extra_field.value) return;   // honeypot (renamed 9/15: "website" was getting browser-autofilled, which killed the click silently)
     var email = form.email.value.trim();
     var zip = form.zip.value.trim().replace(/[^0-9]/g, '').slice(0, 5);
     var first = form.first_name ? form.first_name.value.trim() : '';
