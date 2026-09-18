@@ -36,10 +36,26 @@
   var btn = form.querySelector('button[type=submit]');
 
   function show(kind, text) { msg.className = 'msg ' + kind; msg.textContent = text; }
+  var GENERIC_ERR = 'Something went wrong on our end. Email luke@thestrongkitchen.com and we’ll sort it out by hand.';
+
+  // Bot trap, made safe for real people (9/18, same rule as the inline form, GTM v11): the hidden field is readonly so
+  // browser autofill skips it; if it is filled anyway, anyone who has really typed, tapped or clicked in the form is
+  // let through with the field cleared. Only a submit with no real key/pointer events (a script) is dropped.
+  var human = false;
+  function touched(ev) { if (!ev || ev.isTrusted !== false) human = true; }
+  ['keydown', 'pointerdown', 'mousedown', 'touchstart', 'paste', 'input'].forEach(function (s) { form.addEventListener(s, touched, true); });
+  function diag(step) { try { (window.dataLayer = window.dataLayer || []).push({ event: 'skf_' + step, skf_form: 'claim-page' }); } catch (e) {} }
 
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    if (form.sk_extra_field && form.sk_extra_field.value) return;   // honeypot (renamed 9/15: "website" was getting browser-autofilled, which killed the click silently)
+    try { run(); } catch (e) { diag('js_error'); if (btn) btn.disabled = false; show('err', GENERIC_ERR); }
+  });
+
+  function run() {
+    if (form.sk_extra_field && form.sk_extra_field.value) {
+      if (!human) { diag('honeypot_bot'); return; }
+      diag('honeypot_human'); form.sk_extra_field.value = '';
+    }
     var email = form.email.value.trim();
     var zip = form.zip.value.trim().replace(/[^0-9]/g, '').slice(0, 5);
     var first = form.first_name ? form.first_name.value.trim() : '';
@@ -85,7 +101,7 @@
       location.href = next.toString();
     }).catch(function () {
       btn.disabled = false;
-      show('err', 'Something went wrong on our end. Email luke@thestrongkitchen.com and we’ll sort it out by hand.');
+      show('err', GENERIC_ERR);
     });
-  });
+  }
 })();
